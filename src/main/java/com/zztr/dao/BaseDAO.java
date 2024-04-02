@@ -10,19 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 父类DAO，为抽象类
+ * 鐖剁被DAO锛屼负鎶借薄绫�
  * @author LiZanhong
  *
  */
 public class BaseDAO {
 	/**
-	 * 获取连接对象
+	 * 鑾峰彇杩炴帴瀵硅薄
 	 * @return
 	 */
 	public Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tr03802?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456789");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/huashuo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456");
 			return conn;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -33,7 +33,7 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 释放资源 
+	 * 閲婃斁璧勬簮 
 	 */
 	public void close(ResultSet rs, Statement stmt, Connection conn) {
 		try {
@@ -52,7 +52,7 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 释放资源 
+	 * 閲婃斁璧勬簮 
 	 * @param stmt
 	 * @param conn
 	 */
@@ -61,7 +61,7 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 绑定参数
+	 * 缁戝畾鍙傛暟
 	 * @param stmt
 	 * @param params  1,2,3
 	 */
@@ -78,24 +78,24 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 执行insert、update和delete语句
+	 * 鎵цinsert銆乽pdate鍜宒elete璇彞
 	 * @param sql
 	 * @param params
 	 * @return
 	 */
 	public int execute(String sql, Object...params) {
 		try {
-			//获取连接对象
+			//鑾峰彇杩炴帴瀵硅薄
 			Connection conn = this.getConnection();
-			//创建语句对象
+			//鍒涘缓璇彞瀵硅薄
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			//绑定参数
+			//缁戝畾鍙傛暟
 			this.bindParameters(stmt, params);
-			//执行SQL语句
+			//鎵цSQL璇彞
 			int v = stmt.executeUpdate();
-			//释放资源 
+			//閲婃斁璧勬簮 
 			this.close(stmt, conn);
-			//返回影响的行数 
+			//杩斿洖褰卞搷鐨勮鏁� 
 			return v;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -104,7 +104,7 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 执行select语句，返回List集合
+	 * 鎵цselect璇彞锛岃繑鍥濴ist闆嗗悎
 	 * @param <E>
 	 * @param sql
 	 * @param mapper
@@ -114,19 +114,19 @@ public class BaseDAO {
 	public <E> List<E> executeQuery(String sql, Mapper<E> mapper, 
 			Object...params){
 		try {
-			//获取连接对象
+			//鑾峰彇杩炴帴瀵硅薄
 			Connection conn = this.getConnection();
-			//创建语句对象
+			//鍒涘缓璇彞瀵硅薄
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			//绑定参数
+			//缁戝畾鍙傛暟
 			this.bindParameters(stmt, params);
-			//执行SQL语句
+			//鎵цSQL璇彞
 			ResultSet rs = stmt.executeQuery();
-			//将ResultSet转换成List
+			//灏哛esultSet杞崲鎴怢ist
 			List<E> list = mapper.map(rs);
-			//释放资源 
+			//閲婃斁璧勬簮 
 			this.close(rs, stmt, conn);
-			//返回影响的行数 
+			//杩斿洖褰卞搷鐨勮鏁� 
 			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -135,7 +135,7 @@ public class BaseDAO {
 	}
 	
 	/**
-	 * 返回一个值（不是记录），适用于返回结果集为一行一列的情况
+	 * 杩斿洖涓�涓�硷紙涓嶆槸璁板綍锛夛紝閫傜敤浜庤繑鍥炵粨鏋滈泦涓轰竴琛屼竴鍒楃殑鎯呭喌
 	 * @param sql
 	 * @param params
 	 * @return
@@ -153,7 +153,7 @@ public class BaseDAO {
 			}
 		}, params);
 		
-		return list.get(0);//只需要List集合中的第0个元素
+		return list.get(0);//鍙渶瑕丩ist闆嗗悎涓殑绗�0涓厓绱�
 	}
 }
 
