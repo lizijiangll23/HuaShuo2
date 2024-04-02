@@ -1,4 +1,4 @@
-package com.zztr.dao;
+package com.zktr.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
