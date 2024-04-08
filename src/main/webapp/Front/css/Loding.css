@@ -1,0 +1,183 @@
+@charset "UTF-8";
+.Lodingbox{
+   position: relative;
+   width: 100%;
+   min-width: 1413px;
+   padding-bottom: 50px;
+}
+
+.logo{
+	display: block;
+    width: 1413px;
+    padding: 0 125px;
+    margin: 0 auto 44px;
+    box-sizing: border-box;
+}
+
+.intobox{
+   font-size: 0;
+   text-align: center;
+}
+
+.logoimg{
+	width: 519px;
+    height: 84px;
+}
+
+.leftbox{
+	display: inline-block;
+    vertical-align: middle;
+    margin-left: 125px;
+    margin-right: 70px;
+    width: 510px;
+    height: 556px;
+    /* float:left; */
+}
+
+.rightbox{
+	display: inline-block;
+    vertical-align: middle;
+   /*  float:right; */
+    margin-right: 50px;
+}
+
+.banner{
+   display: block;
+   width: 510px;
+   height: 510px;
+}
+
+.banner_img{
+	display: block;
+    width: 510px;
+    height: 510px;
+}
+
+.lodingbox{
+	position: relative;
+    display: inline-block;
+    padding: 0 46px;
+    width: 478px;
+    text-align: left;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.04);
+}
+
+.title{
+	padding-top: 89px;
+    font-size: 34px;
+    line-height: 46px;
+    font-family: HarmonyOS Sans SC Medium;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 34px;
+}
+
+.part1 .part2{
+	overflow: hidden;
+}
+
+.ipts{
+	display: block;
+    padding: 0 20px;
+    width: 100%;
+    height: 64px;
+    font-size: 22px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.send{
+	display: inline-block;
+    vertical-align: top;
+    width: 156px;
+    font-size: 22px;
+    height: 64px;
+    line-height: 64px;
+    color: #a4aeba;
+    text-align: center;
+    cursor: pointer;
+    background: #f7f7f7;
+    border-radius: 12px;
+}
+
+.inputs{
+	display: inline-block;
+    vertical-align: top;
+    width: 306px;
+    color: #000;
+    margin-right: 16px;
+}
+
+.passwordbox{
+	position: relative;
+}
+
+.pass{
+	padding-right:77px;
+}
+
+.eye{
+	position: absolute;
+    right: 22px;
+    top: 21px;
+    width: 35px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.che{
+	display: inline-block;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.check p{
+	display: inline-block;
+    vertical-align: top;
+    line-height: 21px;
+    font-size: 16px;
+    color: #6a6a6a;
+    margin-left: 4px;
+}
+
+.check a{
+	color:black;
+}
+
+.btns{
+	width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px;
+    color: #fff;
+    font-family: HarmonyOS Sans SC Medium;
+    font-weight: 600;
+    text-align: center;
+    background: #1f7efe;
+    border-radius: 12px;
+    margin-top: 24px;
+    cursor: pointer;
+    border:none;
+}
+
+.a{
+	font-size: 22px;
+    color: #1f7efe;
+    font-family: HarmonyOS Sans SC Medium;
+    font-weight: 600;
+    line-height: 30px;
+    cursor: pointer;
+	float:right;
+	margin-top:25px;
+}

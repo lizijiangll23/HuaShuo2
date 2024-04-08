@@ -27,8 +27,8 @@ public class Yzm {
         RndNumber rnd = new RndNumber();
         String code = rnd.generateValidateCode(); // 将1234存储在变量code中
         com.aliyun.dysmsapi20170525.models.SendSmsRequest sendSmsRequest = new com.aliyun.dysmsapi20170525.models.SendSmsRequest()
-                .setSignName("在个人项目中的登录验证码")
-                .setTemplateCode("SMS_465413793")
+                .setSignName("JinHui")
+                .setTemplateCode("SMS_465349008")
                 .setPhoneNumbers(phone)
                 .setTemplateParam("{\"code\":\"" + code + "\"}");
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();

@@ -168,7 +168,7 @@
 													<b>登录密码</b>
 												</span>
 												<span class="safe_actions">
-													<a href="#" class="btn safe_btn">
+													<a href="setPass.jsp" class="btn safe_btn">
 														<span>修&nbsp;&nbsp;&nbsp;&nbsp;改</span>
 													</a>
 												</span>

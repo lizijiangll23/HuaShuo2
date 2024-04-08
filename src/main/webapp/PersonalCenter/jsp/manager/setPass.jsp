@@ -7,6 +7,7 @@
 		<title></title>
 	</head>
 	<link rel="stylesheet" href="../../css/PeopleCenter.css"/>
+	<link rel="stylesheet" href="../../css/c_spass.css"/>
 	<style>
 		*{
 			padding: 0px;
@@ -19,92 +20,103 @@
 		li{
 			list-style: none;
 		}
-		
+		.bns{
+			width: 88px;
+		    height: 38px;
+		    line-height: 38px;
+		    text-align: center;
+		    color: #fff;
+		    font-size: 14px;
+		    background: #00a8ff;
+		    border-radius: 4px;
+		    border: none;
+		    margin-left: 332px;
+		}
 	</style>
 	<body>
 		<!-- 导航栏 -->
-				<div class="header">
-					<div class="topBar clearfix">
-						<div class="containerWidth">
-							<div class="leftbox">
-								<a href="">华硕官网</a>
-								<span>|</span>
-								<a href="">商城首页</a>
-								<span>|</span>
-								<a href="">驱动下载</a>
-								<span>|</span>
-								<a href="">装机必备</a>
-								<span>|</span>
-								<a href="">以旧换新</a>
-							</div>
-							<div class="rightbox">
-								<span style="display: inline-block;">
-									<!-- !!!跳转登录或登录 -->
-									<a href="#" class="inlineBlock">仅惠123</a>
-									<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
-									<a href="" class="inlineBlock">退出</a>
-								</span>
-								
-								<span>|</span>
-								<a href="" id="imp">
-									<!-- !!!跳转消息 -->
-									<font onclick="$(function(){alert("跳转消息")})" style="display: inline-block;outline: none;">
-										消息
-									</font>
-								</a>
-								
-								<span>|</span>
-								<a href="../order/c_order.jsp" id="imp1">我的订单</a>
-								<div class="inlineBlock carts">
-									<a href="" class="minicart-text">
-										<span class="inlineBlock">
-											购物车
-											<span>(</span>
-											<b class="number">0</b>
-											<span>)</span>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
+		<div class="header">
+			<div class="topBar clearfix">
+				<div class="containerWidth">
+					<div class="leftbox">
+						<a href="">华硕官网</a>
+						<span>|</span>
+						<a href="">商城首页</a>
+						<span>|</span>
+						<a href="">驱动下载</a>
+						<span>|</span>
+						<a href="">装机必备</a>
+						<span>|</span>
+						<a href="">以旧换新</a>
 					</div>
-					<div class="topModule">
-						<div class="containerWidth">
-							<div class="inlineBlock logobox">
-								<a href="" class="inlineBlock">
-									<img src="../../imgs/logo.png" class="logo">
-								</a>
-								<a href="" class="inlineBlock">
-									<img src="../../imgs/10.gif" class="ten">
-								</a>
-							</div>
-							<div class="inlineBlock menu">
-								<a href="" class="inlineBlock menuItem">
-									<img src="../../imgs/smallten.png" class="inlineBlock icon">
-									<span class="inlineBlock txt">华硕电脑官网</span>
-								</a>
-								<a href="" class="inlineBlock menuItem">
-									<img src="../../imgs/smallten.png" class="inlineBlock icon">
-									<span class="inlineBlock txt">ROG电竞馆</span>
-								</a>
-								<a href="" class="inlineBlock menuItem">
-									<img src="../../imgs/nian.png" class="inlineBlock icon">
-									<span class="inlineBlock txt">a豆智能馆</span>
-								</a>
-								<a href="" class="inlineBlock menuItem">
-									<img src="../../imgs/qing.png" class="inlineBlock icon">
-									<span class="inlineBlock txt">中小企业采购</span>
-								</a>
-							</div>
-							<div class="inlineBlock serachbox">
-								<div class="serach">
-									<input type="text" class="box">
-									<span class="serachIcon"></span>
-								</div>
-							</div>
+					<div class="rightbox">
+						<span style="display: inline-block;">
+							<!-- !!!跳转登录或登录 -->
+							<a href="#" class="inlineBlock">仅惠123</a>
+							<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
+							<a href="" class="inlineBlock">退出</a>
+						</span>
+						
+						<span>|</span>
+						<a href="" id="imp">
+							<!-- !!!跳转消息 -->
+							<font onclick="$(function(){alert("跳转消息")})" style="display: inline-block;outline: none;">
+								消息
+							</font>
+						</a>
+						
+						<span>|</span>
+						<a href="../order/c_order.jsp" id="imp1">我的订单</a>
+						<div class="inlineBlock carts">
+							<a href="" class="minicart-text">
+								<span class="inlineBlock">
+									购物车
+									<span>(</span>
+									<b class="number">0</b>
+									<span>)</span>
+								</span>
+							</a>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="topModule">
+				<div class="containerWidth">
+					<div class="inlineBlock logobox">
+						<a href="" class="inlineBlock">
+							<img src="../../imgs/logo.png" class="logo">
+						</a>
+						<a href="" class="inlineBlock">
+							<img src="../../imgs/10.gif" class="ten">
+						</a>
+					</div>
+					<div class="inlineBlock menu">
+						<a href="" class="inlineBlock menuItem">
+							<img src="../../imgs/smallten.png" class="inlineBlock icon">
+							<span class="inlineBlock txt">华硕电脑官网</span>
+						</a>
+						<a href="" class="inlineBlock menuItem">
+							<img src="../../imgs/smallten.png" class="inlineBlock icon">
+							<span class="inlineBlock txt">ROG电竞馆</span>
+						</a>
+						<a href="" class="inlineBlock menuItem">
+							<img src="../../imgs/nian.png" class="inlineBlock icon">
+							<span class="inlineBlock txt">a豆智能馆</span>
+						</a>
+						<a href="" class="inlineBlock menuItem">
+							<img src="../../imgs/qing.png" class="inlineBlock icon">
+							<span class="inlineBlock txt">中小企业采购</span>
+						</a>
+					</div>
+					<div class="inlineBlock serachbox">
+						<div class="serach">
+							<input type="text" class="box">
+							<span class="serachIcon"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- 个人中心主体部分 -->
 		<div id="body">
 			<div id="center">
@@ -152,9 +164,42 @@
 						</div>
 						<!-- 右边 -->
 						<div id="center-right">
-							<!-- 安全中心 -->
-							<div id="">
-								
+							<!-- 修改密码 -->
+							<div id="c_setPass">
+								<div class="pass_title">
+									<h2>修改密码</h2>
+								</div>
+								<div class="pass_menber">
+									<div class="msg">
+										获取验证码，输入
+										<span>18182084895</span> <!-- !!!获取到手机号 -->
+										收到的短信验证码
+									</div>
+									<form class="mod-content" action="../../../SetPassServlet" method="post">
+										<div class="form-item">
+											<label>验证码:</label>
+											<div class="rightbox1" style="border:none;">
+												<input type="text" name="code" maxlength="6" required>
+												<div class="getcode">
+													获取验证码
+												</div>
+											</div>
+										</div>
+										<div class="form-item">
+											<label>新密码:</label>
+											<div class="rightbox1" style="border:none;">
+												<input type="password" name="pass" placeholder="请输入您的密码" class="ps1" required>
+											</div>
+										</div>
+										<div class="form-item">
+											<label>确认密码:</label>
+											<div class="rightbox1" style="border:none;padding: 0px;margin-left: 15px;">
+												<input type="password" name="yespass" placeholder="请再次输入您的密码" class="ps2" required>
+											</div>
+										</div>
+										<button class="bns">确定</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -355,6 +400,82 @@
 	<script src="../../js/jquery-3.5.1.min.js"></script>
 	<script src="../../js/PeopleCenter.js"></script>
 	<script>
-		
+	$(function(){
+	    // 获取手机号
+	    var phoneNumber = $(".msg span").text();
+
+	    // 将手机号中间部分替换成****
+	    var maskedNumber = phoneNumber.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+
+	    // 打印替换后的手机号
+	    $(".msg span").html(maskedNumber);
+
+	    // 点击获取验证码按钮
+	    $(".getcode").click(function(){
+	        var $getCodeBtn = $(this);
+
+	        if ($getCodeBtn.hasClass("disabled")) {
+	            return;
+	        }
+	        
+			
+	        var phone = phoneNumber;
+	        window.location.href = "../../../YzmServlet?phone=" + phone;
+
+	        $getCodeBtn.addClass("disabled"); // 添加禁用类名
+
+	        // 保存倒计时时间到localStorage
+	        var countdown = 10;
+	        localStorage.setItem("countdown", countdown);
+
+	        startCountdown(countdown, $getCodeBtn); // 开始倒计时
+	    });
+
+	    // 检查是否存在倒计时时间
+	    var savedCountdown = localStorage.getItem("countdown");
+	    if(savedCountdown && savedCountdown >= 0 && savedCountdown <= 60) {
+	        var $getCodeBtn = $(".getcode");
+
+	        // 如果倒计时时间大于0，则开始倒计时
+	        if (savedCountdown > 0) {
+	            $getCodeBtn.addClass("disabled"); // 添加禁用类名
+	            startCountdown(savedCountdown, $getCodeBtn); // 继续倒计时
+	        }
+	        else {
+	            localStorage.removeItem("countdown"); // 移除倒计时时间
+	        }
+	    }
+	    
+	    // 倒计时函数
+	    function startCountdown(countdown, $getCodeBtn) {
+	        $getCodeBtn.text(countdown + "秒后重新获取");
+
+	        // 倒计时减1
+	        countdown--;
+
+	        // 倒计时结束
+	        if (countdown < 0) {
+	            localStorage.removeItem("countdown"); // 移除倒计时时间
+
+	            $getCodeBtn.removeClass("disabled"); // 移除禁用类名
+	            $getCodeBtn.text("获取验证码");
+	            return;
+	        }
+
+	        // 每秒更新一次倒计时
+	        setTimeout(function(){
+	            startCountdown(countdown, $getCodeBtn);
+	        }, 1000);
+	    }
+	});
+	</script>
+	<script type="text/javascript">
+	var pd = "${pd}";
+	  
+	  if (pd === "成功") {
+		  alert("成功")
+	  } else if (pd === "失败") {
+		  alert("失败");
+	  }
 	</script>
 </html>
