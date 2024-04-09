@@ -34,7 +34,7 @@ public class SetPassServlet extends HttpServlet {
 				if (hsdao.update(yespass, uid)>0) {
 					pd = "成功";
 					request.getSession().setAttribute("pd", pd);
-					response.sendRedirect("PersonalCenter/jsp/manager/setPass.jsp");
+					response.sendRedirect("Front/jsp/Loding.jsp");
 				}
 			} else {
 				pd = "失败";

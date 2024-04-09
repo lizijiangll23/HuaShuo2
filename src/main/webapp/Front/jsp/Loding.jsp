@@ -60,7 +60,7 @@
 							<input type="password" autocomplete="off" name="password" class="ipts pass" placeholder="密码">
 							<img class="eye" src="../imgs/eye1.png">
 						</div>
-						<p class="msg" style="display:none;">用户名或密码不正确</p>
+						<p class="msg passno" style="display:none;">用户名或密码不正确</p>
 					</div>
 					
 					<div class="check" style="display:flex;">
@@ -285,6 +285,13 @@ $(function(){
 
     $(".lodingbox").submit();
   });
+  
+  var no = "${no}";
+  if(no=="no"){
+	  $(".part1").css("display","none");
+	  $(".part2").css("display","block");
+	  $(".passno").css("display","block").css("color","red");
+  }
   
 });
 </script>

@@ -43,7 +43,7 @@
 							<!-- !!!跳转登录或登录 -->
 							<a href="#" class="inlineBlock">${user.uname}</a>
 							<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
-							<a href="" class="inlineBlock">退出</a>
+							<a href="../../Front/jsp/Loding.jsp" class="inlineBlock">退出</a>
 						</span>
 						
 						<span>|</span>

@@ -35,23 +35,35 @@ public class LodinguserServlet extends HttpServlet {
 		//密码
 		String phoneorname = request.getParameter("phoneorname");
 		String password = request.getParameter("password");
+		
 		List<Hs_users_message> list = msdao.serach(lodingphone);
+		List<Hs_users_message> passlist = msdao.serach(password,phoneorname);
 		if (lodingphone!="") {
 			if (list.size()>0) {
+				String no = "";
 				request.getSession().setAttribute("user", list.get(0)); 
 				response.sendRedirect("PersonalCenter/jsp/PeopleCenter.jsp");
 			}else {
 				if (msdao.regUser(upass, head, email, lodingphone)>0) {
+					String no = "";
 					List<Hs_users_message> list2 = msdao.serach(lodingphone);
 					request.getSession().setAttribute("user", list2.get(0)); 
 					response.sendRedirect("PersonalCenter/jsp/PeopleCenter.jsp");
 				}
 				else {
-					
+					response.sendRedirect("Front/jsp/Loding.jsp");
 				}
 			}
 		}else {
-			
+			if (passlist.size()>0) {
+				String no = "";
+				request.getSession().setAttribute("user",passlist.get(0));
+				response.sendRedirect("PersonalCenter/jsp/PeopleCenter.jsp");
+			}else {
+				String no = "no";
+				request.getSession().setAttribute("no",no);
+				response.sendRedirect("Front/jsp/Loding.jsp");
+			}
 		}
 		
 	}

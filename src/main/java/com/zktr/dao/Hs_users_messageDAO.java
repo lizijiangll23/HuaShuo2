@@ -57,6 +57,30 @@ public class Hs_users_messageDAO extends BaseDAO{
 			
 		}, phone);
 	}
+	
+	public List<Hs_users_message> serach(String upass,String phoneorname){
+		String sql = "SELECT * FROM hs_users_message WHERE upass = ? AND (phone = ? OR uname = ?)  ";
+		return this.executeQuery(sql, new Mapper<Hs_users_message>() {
+
+			@Override
+			public List<Hs_users_message> map(ResultSet rs) throws SQLException {
+				List<Hs_users_message> list = new ArrayList();
+				while(rs.next()) {
+					Hs_users_message s = new Hs_users_message(
+							rs.getInt(1),
+							rs.getString(2),
+							rs.getString(3), 
+							rs.getString(4), 
+							rs.getString(5), 
+							rs.getString(6), 
+							rs.getString(7));
+					list.add(s);
+				}
+				return list;
+			}
+			
+		},upass,phoneorname,phoneorname);
+	}	
 
     // 获取当前数据库中已存在的最大用户数
     private static int getMaxUserCount() {
