@@ -41,7 +41,7 @@
 							<div class="rightbox">
 								<span style="display: inline-block;">
 									<!-- !!!跳转登录或登录 -->
-									<a href="#" class="inlineBlock">仅惠123</a>
+									<a href="#" class="inlineBlock">${user.uname}</a>
 									<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
 									<a href="" class="inlineBlock">退出</a>
 								</span>

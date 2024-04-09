@@ -52,7 +52,7 @@
 					<div class="rightbox">
 						<span style="display: inline-block;">
 							<!-- !!!跳转登录或登录 -->
-							<a href="#" class="inlineBlock">仅惠123</a>
+							<a href="#" class="inlineBlock">${user.uname}</a>
 							<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
 							<a href="" class="inlineBlock">退出</a>
 						</span>
@@ -172,7 +172,7 @@
 								<div class="pass_menber">
 									<div class="msg">
 										获取验证码，输入
-										<span>18182084895</span> <!-- !!!获取到手机号 -->
+										<span>${user.phone}</span> <!-- !!!获取到手机号 -->
 										收到的短信验证码
 									</div>
 									<form class="mod-content" action="../../../SetPassServlet" method="post">
@@ -473,7 +473,7 @@
 	var pd = "${pd}";
 	  
 	  if (pd === "成功") {
-		  alert("成功")
+		  alert("成功");
 	  } else if (pd === "失败") {
 		  alert("失败");
 	  }

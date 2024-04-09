@@ -79,11 +79,11 @@
 								<div id="c_hello">
 									<!-- 问候 -->
 									<div id="head">
-										<img src="../imgs/惠.jpg"/> <!-- !!!头像 -->
+										<img src="../${user.head}"/> <!-- !!!头像 -->
 									</div>
 									<div id="hello">
 										<div id="hello_name">
-											<span id="name">你好,XXX</span>
+											<span id="name">你好,${user.uname}</span>
 										</div>
 										<div id="hello_welcome">
 											<p>欢迎来到华硕商城!</p>

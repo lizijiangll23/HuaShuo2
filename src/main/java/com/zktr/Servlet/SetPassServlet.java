@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zktr.dao.Hs_users_messageDAO;
+import com.zktr.entiy.Hs_users_message;
 
 /**
  * Servlet implementation class SetPassServlet
@@ -22,12 +23,15 @@ public class SetPassServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String yespass = request.getParameter("yespass");
 		String pd = "";
+		Hs_users_message user = (Hs_users_message) request.getSession().getAttribute("user");
+		int uid = user.getUid();
+		
 		
 		String code =  (String) request.getSession().getAttribute("code");
 		
 		if (code.equals(mycode)) {
 			if (pass.equals(yespass)) {
-				if (hsdao.update(yespass, 1)>0) {
+				if (hsdao.update(yespass, uid)>0) {
 					pd = "成功";
 					request.getSession().setAttribute("pd", pd);
 					response.sendRedirect("PersonalCenter/jsp/manager/setPass.jsp");
