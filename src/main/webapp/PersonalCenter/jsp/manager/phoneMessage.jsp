@@ -74,7 +74,7 @@
 						<!-- !!!跳转登录或登录 -->
 						<a href="#" class="inlineBlock">${user.uname}</a>
 						<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
-						<a href="../../Front/jsp/Loding.jsp" class="inlineBlock">退出</a>
+						<a href="../../../Front/jsp/Loding.jsp" class="inlineBlock">退出</a>
 					</span>
 					
 					<span>|</span>
@@ -234,7 +234,7 @@
 											<label class="form-label">选择验证方式：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input type="radio" value="mobile" checked="checked">
+													<input type="radio" value="mobile" checked="checked" required>
 													手机验证
 												</label>
 											</span>
@@ -243,7 +243,7 @@
 											<label class="form-label"><span style="color:red;">*</span>验证码：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input type="text" name="yzm" placeholder="验证码" class="phonecode" maxlength="4">
+													<input type="text" name="yzm" placeholder="验证码" class="phonecode" maxlength="4" required>
 													<img class="yzm" src="PhoneCode.jsp" onclick="onme()" style="cursor:pointer;">
 												</label>
 											</span>
@@ -266,7 +266,7 @@
 											<label class="form-label">填写验证码：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input type="text" class="writecode" name="code" maxlength="6">
+													<input type="text" class="writecode" name="code" maxlength="6" required>
 												</label>
 											</span>
 										</li>
@@ -600,23 +600,27 @@
 	    
 	    //点击登录按钮事件处理程序
 	    $(".yesbtn").click(function(event){
-	      // 阻止表单的默认提交行为
-	      event.preventDefault();
+    	  // 阻止表单的默认提交行为
+       	  event.preventDefault();
+
 
 	      // 获取用户输入的验证码
 	      var userInputCode = $(".writecode").val();
 	      // 获取发送的验证码
 	      var sentCode = sendcode;
-
+	      
+	      var phonecode = $(".phonecode").val();
 	      // 检查用户输入的验证码是否正确
-	      if (userInputCode !== sentCode) {
-	       alert("验证码错误");
+	      if (userInputCode !== sentCode || phonecode == "") {
+	       alert("验证码或内容填写不完整!");
 	       $(".yzm")[0].click();
 	       getCode();
 	       return; // 若验证码不正确，不执行后续操作
+	      }else{
+	    	  window.location.href = "PhoneCode2.jsp";
 	      }
 	      
-	      window.location.href = "PhoneCode2.jsp";
+	      
 	    });
 	    
 	 	

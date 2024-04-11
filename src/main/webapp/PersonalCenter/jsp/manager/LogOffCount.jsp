@@ -21,9 +21,9 @@
 	li{
 		list-style: none;
 	}
-	.getcode {
-	    background-color: #00a8ff;
-	    margin-left: 15px;
+	.getcode{
+		background-color: #00a8ff;
+	    margin-left: 3px;
 	    margin-right: 3px;
 	    color: #fff;
 	    display: inline-block;
@@ -31,7 +31,7 @@
 	    vertical-align: middle;
 	    width: 116px;
 	    height: 37px;
-	    padding: 0 17px;
+	    padding:0 10px;
 	}
 	.writecode{
 		width: 260px;
@@ -52,13 +52,25 @@
 	    padding: 0;
 	    background: #00a8ff;
 	}
-	.myphone{
-		width: 260px;
-    	height: 36px;
+	.action span{
+		font-size:16px;
+		color:#fff;
 	}
-	.form-item{
-		width:510px;
+	.check{
+		background-color: initial;
+	    cursor: default;
+	    padding: initial;
+	    border: initial;
+	    -webkit-appearance: checkbox;
+	    box-sizing: border-box;
+	    margin: 3px 3px 3px 0;
 	}
+	.form-sub-label{
+		margin-left: 5px;
+	    margin-right: 15px;
+	    vertical-align: middle;
+	}
+	
 </style>
 <body>
 	<!-- 导航栏 -->
@@ -201,45 +213,31 @@
 									<tr>
 										<td class="step-item action">
 											<span>
-												<p class="xu">
-													<img src="../../imgs/xu1.png">
-													<i class="sp">身份验证</i>
-												</p>
-											</span>
-										</td>
-										<td class="icon">
-											<img class="jian" src="../../imgs/jian.png">
-										</td>
-										<td class="step-item action">
-											<span>
-												<p class="xu">
-													<img src="../../imgs/xu2.png">
-													<i class="sp">设置手机信息</i>
-												</p>
-											</span>
-										</td>
-										<td class="icon">
-											<img class="jian" src="../../imgs/jian.png">
-										</td>
-										<td class="step-item">
-											<span>
-												<p class="xu">
-													<img src="../../imgs/xu3.png">
-													<i class="sp">完成</i>
-												</p>
+												身份验证
 											</span>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div id="verify_content">
-								<form action="#" method="post">	
+								<form action="#" method="post">
+									<div class="msg">为保障您的账户安全，请先验证您的身份</div>
+									
 									<ul>
+										<li class="form-item">
+											<label class="form-label">选择验证方式：</label>
+											<span class="form-act">
+												<label class="form-sub-label">
+													<input type="radio" value="mobile" checked="checked">
+													手机验证
+												</label>
+											</span>
+										</li>
 										<li class="form-item">
 											<label class="form-label"><span style="color:red;">*</span>验证码：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input type="text" name="yzm" placeholder="验证码" class="phonecode" maxlength="4" required>
+													<input type="text" name="yzm" placeholder="请输入图片验证码" class="phonecode" maxlength="4">
 													<img class="yzm" src="PhoneCode.jsp" onclick="onme()" style="cursor:pointer;">
 												</label>
 											</span>
@@ -249,9 +247,7 @@
 											<label class="form-label">手机号码：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input class="myphone" name="newphone" maxlength="11" type="text"  inputmode="numeric">
-													<span class="changephone" id="phone-number" style="display:none;">${user.phone}</span>
-													<br>
+													<span class="changephone" id="phone-number">${user.phone}</span>
 													<a class="getcode" style="cursor:pointer;">
 														<span>
 															<span class="send">获取验证码</span>
@@ -261,16 +257,26 @@
 											</span>
 										</li>
 										<li class="form-item">
-											<label class="form-label">填写验证码：</label>
+											<label class="form-label">手机验证码：</label>
 											<span class="form-act">
 												<label class="form-sub-label">
-													<input type="text" class="writecode" name="code" maxlength="6" required>
+													<input type="text" class="writecode" name="code" maxlength="6" placeholder="请输入手机验证码">
+												</label>
+											</span>
+										</li>
+										<li class="form-item" style="width:500px;">
+											<label class="form-label"></label>
+											<span class="form-act" style="position: relative;">
+												<input class="check" type="checkbox" >
+												<label class="form-sub-label" style="position: absolute;top: 0px;left: 18px;">
+													<span>我已阅读并同意</span>
+													<a style="margin-left: 3px;margin-right: 3px;color: #0563c3;cursor: pointer;"> 《华硕商城账号注销须知》</a>
 												</label>
 											</span>
 										</li>
 										<li class="form-item-normal">
 											<span class="form-act">
-												<input type="submit" class="yesbtn" style="cursor:pointer;" required>
+												<input type="submit" class="yesbtn" style="cursor:pointer;" value="申请注销">
 											</span>
 										</li>
 									</ul>
@@ -482,24 +488,30 @@
 	$(function(){
 		// 在页面加载完成时调用获取验证码的函数
 	    getCode();
-
-	  	//获取手机号
+	    // 获取手机号
 	    var phoneNumber = $("#phone-number").html();
+	
+	    // 将手机号中间部分替换成****
+	    var maskedNumber = phoneNumber.replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+	
+	    // 打印替换后的手机号
+	    $("#phone-number").html(maskedNumber);
+	    
 		var code = "";
 		var sendcode = "";
 	    
 	    $(".getcode").click(function(){
 	    	// 获取phonecode的值
 	        var phonecode = $(".phonecode").val();
-	    	var myphone = $(".myphone").val();
-	        if(phonecode == code && myphone.length == 11){
+	    	
+	        if(phonecode == code){
 	        	// 如果倒计时未开始且倒计时秒数为初始值60，则执行后续操作
 		        if (!isCountdownActive && countdownSeconds === 10) {
 		            // 调用发送验证码的函数
 		            sendVerificationCode();
 		        }
 	        }else{
-	        	alert("验证码或手机号错误!");
+	        	alert("验证码错误!");
 	        }
 	    });
 	    
@@ -599,41 +611,22 @@
 	      var userInputCode = $(".writecode").val();
 	      // 获取发送的验证码
 	      var sentCode = sendcode;
-		  
+	      
 	      var phonecode = $(".phonecode").val();
+	      var isChecked = $(".check").prop("checked");
 	      
 	      // 检查用户输入的验证码是否正确
-	      if (userInputCode !== sentCode || phonecode == "") {
-	       alert("验证码或内容填写不完整!");
+	      if (userInputCode !== sentCode || phonecode == "" || !isChecked) {
+	       alert("验证码或内容填写错误!");
 	       $(".yzm")[0].click();
 	       getCode();
 	       return; // 若验证码不正确，不执行后续操作
 	      }
-	      alert("正确");
-	      var myphone = $(".myphone").val();
-	      window.location.href = "../../../SetPhoneMessageServlet?phoneNumber="+phoneNumber+"&myphone="+myphone;
+	      
+	      window.location.href = "";
 	    });
 	    
-	 	// 绑定输入框的 input 事件
-	    $(".myphone").on("input", function() {
-	      // 获取输入框的值
-	      var value = $(this).val();
-	      // 使用正则表达式将非数字字符替换为空字符串
-	      var newValue = value.replace(/\D/g, "");
-	      // 更新输入框的值
-	      $(this).val(newValue);
-	    });
-
-	    // 绑定输入框的 keydown 事件
-	    $(".myphone").on("keydown", function(e) {
-	      // 获取按键的keyCode
-	      var keyCode = e.which || e.keyCode;
-	      // 允许输入数字和删除键
-	      if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 8) {
-	        return true;
-	      }
-	      e.preventDefault();
-	    });
+	 	
 	   
 	});
 	

@@ -35,7 +35,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 	}
 
 	public List<Hs_users_message> serach(String phone) {
-		String sql = "SELECT * FROM hs_users_message where phone = ?";
+		String sql = "SELECT * FROM hs_users_message where phone = ? and `status` = 0";
 		return this.executeQuery(sql, new Mapper<Hs_users_message>() {
 
 			@Override
@@ -53,7 +53,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 	}
 
 	public List<Hs_users_message> serach(String upass, String phoneorname) {
-		String sql = "SELECT * FROM hs_users_message WHERE upass = ? AND (phone = ? OR uname = ?)  ";
+		String sql = "SELECT * FROM hs_users_message WHERE upass = ? AND (phone = ? OR uname = ?) and `status` = 0  ";
 		return this.executeQuery(sql, new Mapper<Hs_users_message>() {
 
 			@Override
