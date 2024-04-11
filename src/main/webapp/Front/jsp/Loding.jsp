@@ -42,7 +42,7 @@
 					</p>
 					
 					<div class="part1">
-						<input class="ipts phonenum" name="lodingphone" placeholder="输入手机号" maxlength="11" autocomplete="off">
+						<input class="ipts phonenum" name="lodingphone" placeholder="输入手机号" maxlength="11" autocomplete="off" value="${newphone}">
 						<p class="msg no" style="display:none;">手机号不正确</p>
 						<div class="codebox">
 							<input type="text" autocomplete="off" name="code" class="ipts inputs" placeholder="请输入验证码" maxlength="6"	>
@@ -100,6 +100,8 @@ $(function(){
   var isCountdownActive = false;
   
   var code = "";
+  
+  
 
   // 监听输入框的 input 事件
   $(".ipts, .che").on("input", function() {
@@ -292,6 +294,27 @@ $(function(){
 	  $(".part2").css("display","block");
 	  $(".passno").css("display","block").css("color","red");
   }
+  
+	  //绑定输入框的 input 事件
+	  $(".phonenum").on("input", function() {
+	    // 获取输入框的值
+	    var value = $(this).val();
+	    // 使用正则表达式将非数字字符替换为空字符串
+	    var newValue = value.replace(/\D/g, "");
+	    // 更新输入框的值
+	    $(this).val(newValue);
+	  });
+	
+	  // 绑定输入框的 keydown 事件
+	  $(".phonenum").on("keydown", function(e) {
+	    // 获取按键的keyCode
+	    var keyCode = e.which || e.keyCode;
+	    // 允许输入数字和删除键
+	    if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105) || keyCode == 8) {
+	      return true;
+	    }
+	    e.preventDefault();
+	  });
   
 });
 </script>

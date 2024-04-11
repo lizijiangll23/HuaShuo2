@@ -182,12 +182,12 @@
 													<b>手机验证</b>
 												</span>
 												<span class="safe_actions">
-													<a href="#" class="btn safe_btn">
+													<a href="phoneMessage.jsp" class="btn safe_btn">
 														<span>修&nbsp;&nbsp;&nbsp;&nbsp;改</span>
 													</a>
 												</span>
 												<span class="safe_content">
-													<em>您的验证手机:12315423144</em> <!-- !!!改 -->
+													<em>您的验证手机:${user.phone}</em>
 												</span>
 											</li>
 											<li>

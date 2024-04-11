@@ -385,6 +385,11 @@
 	width: 100%;
 	margin-left:20px;
 }
+#c_phoneMessage{
+	width: 100%;
+	margin-left:20px;
+}
+
 #c_adderss{
 	width: 100%;
 	margin-left:20px;
@@ -1201,6 +1206,7 @@ input{
 	line-height: 2;
 	font-style: normal;
 }
+
 
 
 /* c_adderss部分 */
