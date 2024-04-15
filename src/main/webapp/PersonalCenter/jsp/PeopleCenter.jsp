@@ -79,7 +79,7 @@
 								<div id="c_hello">
 									<!-- 问候 -->
 									<div id="head">
-										<img src="../${user.head}"/> <!-- !!!头像 -->
+										<img src="../../images/${user.head}"/> <!-- !!!头像 -->
 									</div>
 									<div id="hello">
 										<div id="hello_name">

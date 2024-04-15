@@ -623,7 +623,7 @@
 	       return; // 若验证码不正确，不执行后续操作
 	      }
 	      
-	      window.location.href = "";
+	      window.location.href = "../../../LogOffServlet?phoneNumber="+phoneNumber;
 	    });
 	    
 	 	

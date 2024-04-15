@@ -1,5 +1,7 @@
 package com.zktr.entiy;
 
+import java.util.Date;
+
 /**
 * @Description: 
 * @author: 惠
@@ -13,6 +15,22 @@ public class Hs_users_message {
 	private String head; //头像
 	private String email; //邮箱
 	private String phone; //电话
+	private Date birthday;//生日
+	private String sex;//性别
+	
+	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
 	public int getUid() {
 		return uid;
 	}
@@ -55,13 +73,17 @@ public class Hs_users_message {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "Hs_users_message [uid=" + uid + ", uname=" + uname + ", account=" + account + ", upass=" + upass
-				+ ", head=" + head + ", email=" + email + ", phone=" + phone + "]";
+				+ ", head=" + head + ", email=" + email + ", phone=" + phone + ", birthday=" + birthday + ", sex=" + sex
+				+ "]";
 	}
+	
 	public Hs_users_message(int uid, String uname, String account, String upass, String head, String email,
-			String phone) {
+			String phone, Date birthday, String sex) {
 		super();
 		this.uid = uid;
 		this.uname = uname;
@@ -70,6 +92,8 @@ public class Hs_users_message {
 		this.head = head;
 		this.email = email;
 		this.phone = phone;
+		this.birthday = birthday;
+		this.sex = sex;
 	}
 	public Hs_users_message() {
 		super();

@@ -1,6 +1,7 @@
 package com.zktr.Servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -28,9 +29,10 @@ public class LodinguserServlet extends HttpServlet {
 		String code = request.getParameter("code");
 		
 		String upass = "";
-		String head = "imgs/惠.jpg";
+		String head = "惠.jpg";
 		String email = "";
-		
+		Date date = Date.valueOf("2024-4-11");
+		String sex = "暂无";
 		
 		//密码
 		String phoneorname = request.getParameter("phoneorname");
@@ -44,7 +46,7 @@ public class LodinguserServlet extends HttpServlet {
 				request.getSession().setAttribute("user", list.get(0)); 
 				response.sendRedirect("PersonalCenter/jsp/PeopleCenter.jsp");
 			}else {
-				if (msdao.regUser(upass, head, email, lodingphone)>0) {
+				if (msdao.regUser(upass, head, email, lodingphone,date,sex)>0) {
 					String no = "";
 					List<Hs_users_message> list2 = msdao.serach(lodingphone);
 					request.getSession().setAttribute("user", list2.get(0)); 

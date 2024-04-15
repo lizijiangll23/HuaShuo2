@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.zktr.entiy.Hs_users_message;
@@ -22,7 +23,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 		return this.execute(sql, pass, uid);
 	}
 
-	public int regUser(String upass, String head, String email, String phone) {
+	public int regUser(String upass, String head, String email, String phone,Date date,String sex) {
 		int userCount = getMaxUserCount();
 		String uname = generateUsername(userCount + 1);
 
@@ -30,8 +31,8 @@ public class Hs_users_messageDAO extends BaseDAO {
 		String firstLetter = uname.substring(0, 1).toUpperCase();
 		String modifiedAccount = firstLetter + uname.substring(1);
 
-		String sql = "INSERT INTO hs_users_message (uname, account, upass, head, email, phone) VALUES (?, ?, ?, ?, ?, ?)";
-		return this.execute(sql, uname, modifiedAccount, upass, head, email, phone);
+		String sql = "INSERT INTO hs_users_message (uname, account, upass, head, email, phone,birthday,sex) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		return this.execute(sql, uname, modifiedAccount, upass, head, email, phone, date,sex);
 	}
 
 	public List<Hs_users_message> serach(String phone) {
@@ -43,7 +44,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 				List<Hs_users_message> list = new ArrayList();
 				while (rs.next()) {
 					Hs_users_message s = new Hs_users_message(rs.getInt(1), rs.getString(2), rs.getString(3),
-							rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+							rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),rs.getDate("birthday"),rs.getString(9));
 					list.add(s);
 				}
 				return list;
@@ -61,7 +62,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 				List<Hs_users_message> list = new ArrayList();
 				while (rs.next()) {
 					Hs_users_message s = new Hs_users_message(rs.getInt(1), rs.getString(2), rs.getString(3),
-							rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+							rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),rs.getDate("birthday"),rs.getString(9));
 					list.add(s);
 				}
 				return list;
@@ -73,9 +74,18 @@ public class Hs_users_messageDAO extends BaseDAO {
 	
 	public int updatePhone(String newphone,String oldphone) {
 		String sql = "UPDATE hs_users_message SET phone = ? WHERE phone = ?";
-		System.out.println(sql+";newphone="+newphone+";oldphone="+oldphone);
 		return this.execute(sql, newphone,oldphone);
 	
+	}
+	
+	public int LogOff(String phone) {
+		String sql = "UPDATE hs_users_message SET `status` = '1' WHERE phone = ?";
+		return this.execute(sql, phone);
+	}
+	
+	public int changeCountMassage(String uname,String head,String email,Date date,String sex,int uid) {
+		String sql = "UPDATE hs_users_message SET uname = ?, head = ?,email = ?, birthday = ?, sex = ? WHERE uid = ?";
+		return this.execute(sql, uname,head,email,date,sex,uid);
 	}
 	 
 

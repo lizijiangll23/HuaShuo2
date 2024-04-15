@@ -158,17 +158,16 @@
 								</div>
 								<div id="massage_info">
 									<!-- !!!表单 -->
-									<form action="" method="post" id="myCheckbox">
+									<form action="MassageServlet" method="post" id="myCheckbox" enctype="multipart/form-data">
 										<ul>
 											<li class="form-item" style="width: 145px;margin-top: 0px;">
 												<span class="form-act" style="margin: 0;">
-													<img src="../../imgs/惠.jpg" class="img_box">
+													<img src="../../../images/${user.head}" class="img_box">
 													<div id="addpic_div" class="avator_uploader">
 														<div class="addpic">
-															<a href="" class="btn">更改头像</a>
-															<input type="hidden" name="avatar" id="avatar">
+															<a href="" class="btn changehead">更改头像</a>
+															<input type="file" name="photo" id="avatar" style="display:none;">
 														</div>
-														<input type="file" accept="undefined" name="file" class="file">
 													</div>
 												</span>
 											</li>
@@ -178,18 +177,18 @@
 												<label class="form_label">用户名:</label>
 												<span class="form-act" style="margin: 0px;">
 													<!-- !!!传值 -->
-													<input type="text" class="x_input" value="仅惠123" name="user_name" placeholder="请输入">
+													<input type="text" class="x_input username" value="${user.uname}" name="user_name" placeholder="请输入">
 												</span>
 											</li>
 											<li class="form-item">
 												<label class="form_label">性别:</label>
 												<span class="form-act">
 													<span class="form_radio">
-														<input type="radio" class="radio" name="sex" value="0" checked>
+														<input type="radio" class="radio" name="sex" value="男" checked>
 														男
 													</span>
 													<span class="form_radio">
-														<input type="radio" class="radio" name="sex" value="1">
+														<input type="radio" class="radio" name="sex" value="女">
 														女
 													</span>
 												</span>
@@ -205,12 +204,12 @@
 											<li class="form-item">
 												<label class="form_label">邮箱:</label>
 												<span class="form-act">
-													<input type="text" class="x_input" value="" name="email" placeholder="请输入">
+													<input type="text" class="x_input useremail" value="" name="email" placeholder="请输入">
 												</span>
 											</li>
 											<li class="form-item">
 												<span>
-													<input type="checkbox" id="license" data-caution="请阅读并同意使用条款等">
+													<input type="checkbox" id="license" data-caution="请阅读并同意使用条款等" name="check">
 													<label class="form-sub-label" style="font-size: 14px;">
 														<span>我同意</span>
 														<a href="#" class="lnklike" style="color: #00a8ff;">《服务须知》</a>
@@ -223,7 +222,7 @@
 												</span>
 											</li>
 											<li class="form-item">
-												<button type="submit" class="btn btn-caution"><span>保存</span></button>
+												<input type="submit" class="btn btn-caution" value="保存"> 
 											</li>
 										</ul>
 									</form>
@@ -425,4 +424,110 @@
 			
 		</div>
 </body>
+<script type="text/javascript" src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	
+$(function(){
+	/*  $("#myCheckbox").submit(function(e) {
+	    e.preventDefault();
+
+	    var yearSelected = $("#year").val();
+	    var monthSelected = $("#month").val();
+	    var daySelected = $("#day").val();
+	    // 检查年月日是否已选择
+	    if (yearSelected == null || monthSelected == null || daySelected == null) {
+	        alert("请完整填写个人信息并选择生日。");
+	    } else {
+	        // 获取生日的值
+	        var birthday = yearSelected + "-" + monthSelected + "-" + daySelected;
+
+	        // 检查表单其他字段是否填写完整
+	        var username = $(".username").val();
+	        var email = $(".useremail").val();
+	        var checkboxChecked = $("#license").prop("checked");
+
+	        // 使用正则表达式判断邮箱格式是否正确
+	        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	        if (username === "" || email === "" || !emailRegex.test(email) || !checkboxChecked) {
+	            alert("请完整填写个人信息并正确填写邮箱，并同意使用条款等。");
+	        } else {
+	        	
+	        }
+	    } 
+	});  */
+	
+	var no = "${no}";
+	if(no=="no"){
+		alert("请填写完整信息!");
+		no = "";
+	} else if(no=="check"){
+		alert("请同意使用条款!");
+		no = "";
+	} else if(no=="email"){
+		alert("邮箱请填写正确!");
+		no = "";
+	}
+	
+	
+	// 生成年份选项
+	var yearSelect = $("#year");
+	var currentYear = new Date().getFullYear();
+	for (var i = currentYear; i >= currentYear - 100; i--) {
+	    var option = $("<option>").text(i);
+	    yearSelect.append(option);
+	}
+
+	// 监听年份下拉框的变化
+	yearSelect.on("change", function() {
+	    var monthSelect = $("#month");
+	    monthSelect.css("display", "inline-block"); // 显示月份下拉框
+
+	    // 生成月份选项
+	    for (var i = 1; i <= 12; i++) {
+	        var option = $("<option>").text(i);
+	        monthSelect.append(option);
+	    }
+	});
+
+	// 监听月份下拉框的变化
+	var monthSelect = $("#month");
+	monthSelect.on("change", function() {
+	    var daySelect = $("#day");
+	    daySelect.css("display", "inline-block"); // 显示日期下拉框
+
+	    // 获取选择的年份和月份
+	    var year = parseInt(yearSelect.val());
+	    var month = parseInt(monthSelect.val());
+	    var daysInMonth = 31;
+
+	    if (month == 2) {
+	        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+	            daysInMonth = 29; // 闰年2月有29天
+	        } else {
+	            daysInMonth = 28; // 平年2月有28天
+	        }
+	    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+	        daysInMonth = 30; // 4、6、9、11月有30天
+	    }
+
+	    // 生成日期选项
+	    for (var i = 1; i <= daysInMonth; i++) {
+	        var option = $("<option>").text(i);
+	        daySelect.append(option);
+	    }
+	});
+	
+	$(function() {
+	    // 点击更改头像按钮时触发事件
+	    $(".changehead").on("click", function(e) {
+	        e.preventDefault();
+	        // 触发隐藏的文件上传框的点击事件
+	        $("#avatar").click();
+	    });
+	});
+});
+	
+	
+	
+</script>
 </html>
