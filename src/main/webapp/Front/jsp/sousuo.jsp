@@ -112,7 +112,7 @@
 			console.log(sc);
 		    // 发送GET请求到服务器端
 		    $.getJSON("chaxun", function(data) {
-		        for (var i = 0; i < date.length; i++) {
+		        for (var i = 0; i < data.length; i++) {
 		            var product = data[i];
 		            var newDiv = $("<div>");
 		            var img = $("<img>").attr("src", product.imagePath).attr("id", "tp");
