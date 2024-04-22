@@ -18,4 +18,14 @@
   	<servlet-name>first</servlet-name>
   	<url-pattern>/f</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>GetRndGodeServlet</servlet-name>
+    <servlet-class>com.example.GetRndGodeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GetRndGodeServlet</servlet-name>
+    <url-pattern>/GetRndGodeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
