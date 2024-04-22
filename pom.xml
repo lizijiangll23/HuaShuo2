@@ -126,11 +126,6 @@
 	   <version>LATEST</version>
 	</dependency>
 	
-	<dependency>
-		<groupId>com.zktr</groupId>
-		<artifactId>MedicineApp</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
 
 	</dependencies>
 
