@@ -191,13 +191,13 @@
                             <img class="small_main_img " alt="You Image" src="../imgs/电脑1.jpg" >
                         </li>
                         <li>
-                            <img class="small_main_img " src="../imgs/电脑1.jpg">
+                            <img class="small_main_img " src="../imgs/图片2-3.jpg">
                         </li>
                         <li>
-                            <img class="small_main_img " src="../imgs/电脑1.jpg">
+                            <img class="small_main_img " src="../imgs/图片2-4.jpg">
                         </li>
                         <li>
-                            <img class="small_main_img " src="../imgs/电脑1.jpg" >
+                            <img class="small_main_img " src="../imgs/图片2-5.jpg" >
                         </li>
                         <li>
                             <img class="small_main_img " src="../imgs/电脑2.jpg" >
@@ -850,9 +850,9 @@
 		// 图片列表
 		var imageList = [
 		    '../imgs/电脑1.jpg',
-		    '../imgs/电脑2.jpg',
-		    '../imgs/电脑3.jpg',
-		    '../imgs/电脑4.jpg',
+		    '../imgs/图片2-3.jpg',
+		    '../imgs/图片2-4.jpg',
+		    '../imgs/图片2-5.jpg',
 		    '../imgs/电脑5.jpg'
 		];
 
