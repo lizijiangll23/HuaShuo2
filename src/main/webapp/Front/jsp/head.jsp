@@ -31,6 +31,7 @@
 						
 						<span>|</span>
 						<a href="" id="imp">
+							<!-- !!!跳转消息 -->
 							<font onclick="$(function(){alert("跳转消息")})" style="display: inline-block;outline: none;">
 								消息
 							</font>
