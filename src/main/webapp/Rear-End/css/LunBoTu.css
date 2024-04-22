@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+				#lb1{
+					position: relative;
+					width: 100%;
+					height: 500px;
+					margin: auto;
+				}
+				 #lunbo {
+       	 width: 100%; /* Set the width of the image to 100% of the container */
+        height: 500px; /* Set the height of the image to 100% of the container */
+        object-fit: cover; /* Ensure the image covers the entire container */
+    }
+				.wubk, .wubk2 {
+				    position: absolute;
+				    border: none;
+				    background-color: transparent;
+				    cursor: pointer;
+				    height: 56px;
+				    z-index: 1;
+				}
+				
+				.wubk img, .wubk2 img {
+				    width: 100%;
+				    height: 100%;
+				}
+				
+				.wubk {
+				    top: 50%;
+				    left: 550px; /* 调整按钮位置 */
+				    transform: translateY(-50%);
+				}
+				
+				.wubk2 {
+				    top: 50%;
+				    right: 350px; /* 调整按钮位置 */
+				    transform: translateY(-50%);
+				}
+				
+				.dot-container {
+				    position: absolute;
+				    bottom: 10px; /* 调整小圆点距离图片底部的距离 */
+				    left: 50%;
+				    transform: translateX(-50%);
+				}
+				
+				.dot {
+				    width: 10px;
+				    height: 10px;
+				    background-color: #ccc; /* 小圆点的颜色 */
+				    border-radius: 50%;
+				    margin: 0 5px; /* 调整小圆点之间的间距 */
+				    display: inline-block;
+				}
+				
+				.active-dot {
+				    background-color: aqua; 
+				}

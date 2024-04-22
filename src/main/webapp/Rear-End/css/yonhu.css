@@ -56,15 +56,21 @@
     text-align: center; /* 居中显示文本 */
 }
 #xian{
-	width: 32%;
-	height: 500px;
-	background-color: white;
+	width: 30%;
+	height: 490px;
+	background-color: #ccc;
 	float: right;
 	margin-right: 14px;
 	border-radius: 10px;
-	box-shadow: 5px 5px 5px #888888;
+	border:8px dashed #666;
 }
-
+#yu{
+	width: 30%;
+	height: 490	px;
+	color: #666;
+	margin: 0px auto;
+	line-height: 490px;
+}
 .overlay {
     display: none;
     position: fixed;
@@ -238,7 +244,9 @@
     color: #333; /* 设置标题文本颜色 */
     text-align: center; /* 设置标题居中显示 */
 }
-
+#gyou input{
+	margin-left: 30px;
+}
 #gyou button{
 	padding:5px 10px;
 	margin-left: 70px;

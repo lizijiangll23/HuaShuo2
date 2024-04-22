@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 	<link href="../css/hd.css" rel="stylesheet" type="text/css"/>
 		<script src="../js/jquery-2.1.1.min.js"></script>
+		
 	<div id="to">
 	<div id="cai">
 		<div id="tox"></div>
@@ -21,7 +22,7 @@
 				数据统计<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>数据分析</li>
+				<li onclick="shu()">数据分析</li>
 			</ul>
 		</li>
 		<li>
@@ -48,7 +49,7 @@
 				营销中心<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>轮播图管理</li>
+				<li onclick="lun()">轮播图管理</li>
 				<li>广告管理</li>
 			</ul>
 		</li>
@@ -57,8 +58,8 @@
 				用户管理<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>用户账号管理</li>
-				<li>管理员账号管理</li>
+				<li onclick="yon()">用户账号管理</li>
+				<li onclick="guan()">管理员账号管理</li>
 			</ul>
 		</li>
 		<li>
@@ -66,9 +67,22 @@
 				处理事件<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>用户账号申诉</li>
 				<li>订单申诉</li>
 			</ul>
 		</li>
 	</ul>
 </div>
+	<script>
+		function shu() {
+			window.location.href = "ShanLunBo";
+		}
+		function lun() {
+			window.location.href = "LunTu";
+		}
+		function yon() {
+			window.location.href = "ChaYonHu";
+		}
+		function guan() {
+			window.location.href = "GuanLi";
+		}
+		</script>

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -93,63 +94,15 @@
 					        <th>运营商</th>
 					        <th>登录时间</th>
 					    </tr>
+					    <c:forEach items="${rizhi}" var="u">
 					    <tr>
-					        <td>John Doe</td>
-					        <td>123 Main St</td>
-					        <td>192.168.1.1</td>
-					        <td>ISP Name</td>
-					        <td>2024-03-21 10:00:00</td>
+					        <td>${u.username}</td>
+					        <td>${u.address}</td>
+					        <td>${u.ip}</td>
+					        <td>${u.isp}</td>
+					        <td>${u.login_time}</td>
 					    </tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
-						<tr>
-						    <td>John Doe</td>
-						    <td>123 Main St</td>
-						    <td>192.168.1.1</td>
-						    <td>ISP Name</td>
-						    <td>2024-03-21 10:00:00</td>
-						</tr>
+					    </c:forEach>
 					  </table>
 					  <div id="fen"></div>
 					  </div>
@@ -158,60 +111,14 @@
 				<div id="shan_d"><p>最新订单</p></div>
 				<div id="xd">
 					 <table id="x">
+					 <c:forEach items="${dindan}" var="u">
 					            <tr>
 					                <td>订单号</td>
-					                <td>202401241548370001</td>
+					                <td>${u.din}</td>
 					                <td>下单客户</td>
-					                <td>徐广志</td>
+					                <td>${u.name}</td>
 					            </tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
-								<tr>
-								    <td>订单号</td>
-								    <td>202401241548370001</td>
-								    <td>下单客户</td>
-								    <td>徐广志</td>
-								</tr>
+					            </c:forEach>
 					</table>
 				</div>
 			</div>

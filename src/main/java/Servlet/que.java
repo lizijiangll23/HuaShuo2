@@ -19,18 +19,22 @@ public class que extends HttpServlet {
 		String name = request.getParameter("name");
 		String zhang = request.getParameter("zhang");
 		String mi = request.getParameter("mi");
-		String to = request.getParameter("xuan");
+		String to = "../imgs/"+request.getParameter("imageName");
 		String mi_1 = request.getParameter("mi_1");
-		if(mi_1.equals(mi_1)) {
+		if(mi.equals(mi_1)) {
 			int sid = Integer.parseInt(id);
 			System.out.println(sid);
+			System.out.println(to);
 			guan.xin(sid, name, zhang, mi,to);
 			request.setAttribute("chen", "添加成功");
-			request.getRequestDispatcher("guanli.jsp").forward(request, response);
+			String targetServletUrl = "GuanLi"; // 替换成目标Servlet的URL
+	        // 执行转发
+			request.getRequestDispatcher(targetServletUrl).forward(request, response);
 		}else {
 			request.setAttribute("chen", "添加失败");
 			response.sendRedirect("guanli.jsp");
 		}
+		
 	}
 
 }

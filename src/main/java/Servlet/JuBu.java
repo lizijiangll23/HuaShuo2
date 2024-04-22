@@ -7,24 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zktr.dao.GuanLiYuan;
-
-import java.util.List;
-
 /**
- * Servlet implementation class GuanLi
+ * Servlet implementation class JuBu
  */
-@WebServlet("/Rear-End/jsp/GuanLi")
-public class GuanLi extends HttpServlet {
+@WebServlet("/Rear-End/jsp/JuBu")
+public class JuBu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		com.zktr.dao.GuanLiDAO guan = new com.zktr.dao.GuanLiDAO();
-		Object ad_id = (int)guan.bian()+1;
-		request.getSession().setAttribute("id", "00"+ad_id);
-		java.util.List<GuanLiYuan> list = guan.cha();
+		com.zktr.dao.yonhuDAO yon = new com.zktr.dao.yonhuDAO();
+		String id = request.getParameter("userId");
+		java.util.List<com.zktr.dao.YonHu> list = yon.jubu(id);
 		request.getSession().setAttribute("list", list);
-		request.getRequestDispatcher("guanli.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("xingxi.jsp").forward(request, response);
 	}
 
 }

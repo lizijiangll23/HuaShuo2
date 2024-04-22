@@ -1,30 +1,25 @@
 package Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zktr.dao.GuanLiYuan;
-
-import java.util.List;
-
 /**
- * Servlet implementation class GuanLi
+ * Servlet implementation class LunTu
  */
-@WebServlet("/Rear-End/jsp/GuanLi")
-public class GuanLi extends HttpServlet {
+@WebServlet("/Rear-End/jsp/LunTu")
+public class LunTu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		com.zktr.dao.GuanLiDAO guan = new com.zktr.dao.GuanLiDAO();
-		Object ad_id = (int)guan.bian()+1;
-		request.getSession().setAttribute("id", "00"+ad_id);
-		java.util.List<GuanLiYuan> list = guan.cha();
+		com.zktr.dao.LunDAO lun = new com.zktr.dao.LunDAO();
+		List<com.zktr.dao.Lun> list = lun.cha();
 		request.getSession().setAttribute("list", list);
-		request.getRequestDispatcher("guanli.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("LunBo.jsp").forward(request, response);
 	}
 
 }

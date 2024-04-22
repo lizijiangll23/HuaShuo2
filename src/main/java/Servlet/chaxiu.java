@@ -9,22 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zktr.dao.GuanLiYuan;
 
-import java.util.List;
-
 /**
- * Servlet implementation class GuanLi
+ * Servlet implementation class chaxiu
  */
-@WebServlet("/Rear-End/jsp/GuanLi")
-public class GuanLi extends HttpServlet {
+@WebServlet("/Rear-End/jsp/chaxiu")
+public class chaxiu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		System.out.println(id);
 		com.zktr.dao.GuanLiDAO guan = new com.zktr.dao.GuanLiDAO();
-		Object ad_id = (int)guan.bian()+1;
-		request.getSession().setAttribute("id", "00"+ad_id);
-		java.util.List<GuanLiYuan> list = guan.cha();
-		request.getSession().setAttribute("list", list);
+		java.util.List<GuanLiYuan> list = guan.chadan(id);
+		request.getSession().setAttribute("slist", list);
 		request.getRequestDispatcher("guanli.jsp").forward(request, response);
-		
 	}
 
 }

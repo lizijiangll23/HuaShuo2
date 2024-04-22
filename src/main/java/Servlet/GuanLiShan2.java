@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class GuanLiShan
  */
-@WebServlet("/GuanLiShan2")
+@WebServlet("/Rear-End/jsp/GuanLiShan2")
 public class GuanLiShan2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,7 +19,9 @@ public class GuanLiShan2 extends HttpServlet {
 		int sid = Integer.parseInt(request.getParameter("id"));
 		System.out.println(sid);
 		guan.shan(sid);
-		response.sendRedirect("Rear-End/jsp/guanli.jsp");
+		String targetServletUrl = "GuanLi"; // 替换成目标Servlet的URL
+        // 执行转发
+		request.getRequestDispatcher(targetServletUrl).forward(request, response);
 	}
 
 }
