@@ -5,11 +5,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zktr.dao.Mapper;
 import com.zztr.entity.User;
 
 public class UserDAO extends BaseDAO{
 	/**
-	 * ²éÑ¯ËùÓÐÓÃ»§
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @return
 	 */
 	public List<User> queryAll(){
