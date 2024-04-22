@@ -19,7 +19,7 @@ public class Hs_orderDAO extends BaseDAO{
 	}
 	
 	// 获取当前数据库中已存在的最大用户数
-	private static long getMaxUserCount() {
+	private long getMaxUserCount() {
 		long maxUserCount = 0;
 	
 		try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {

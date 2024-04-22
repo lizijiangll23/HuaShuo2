@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.zktr.entiy.Hs_users_message;
 
-import entity.Loding;
+
 
 /**
  * @Description:
@@ -90,7 +90,7 @@ public class Hs_users_messageDAO extends BaseDAO {
 	 
 
 	// 获取当前数据库中已存在的最大用户数
-	private static int getMaxUserCount() {
+	private int getMaxUserCount() {
 		int maxUserCount = 0;
 
 		try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
