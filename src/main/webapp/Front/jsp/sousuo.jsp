@@ -102,55 +102,36 @@
 	
 </style>
 		
-		<script src="../js/jquery-3.5.1.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 	<script type="text/javascript">
-	    $(function() {
-	        // 获取要传递的值
-	        var acc = "${acc}";
+		$(function() {
+		    // 要上传的值
+		    var valueToSend = sc; // 你想要上传的值
 	
-	        // 创建 XMLHttpRequest 对象
-	        var xhr = new XMLHttpRequest();
-	
-	        // 设置请求参数
-	        var url = "chaxun?acc=" + acc;
-	        xhr.open("GET", url, true);
-	
-	        // 定义处理响应的回调函数
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState === XMLHttpRequest.DONE) {
-	                if (xhr.status === 200) {
-	                    // 获取返回的值
-	                    var data = JSON.parse(xhr.responseText);
-	
-	                    // 将返回的值填充到指定的div中
-	                    for (var i = 0; i < data.length; i++) {
-	                        var product = data[i];
-	                        var newDiv = $("<div>");
-	                        var img = $("<img>").attr("src", product.imagePath).attr("id", "tp");
-	                        newDiv.append(img);
-	                        var p1 = $("<p>").attr("id", "p-1").text(product.name);
-	                        newDiv.append(p1);
-	                        var p2 = $("<p>").attr("id", "p-2").text(product.config.substring(0, product.config.indexOf(" ", product.config.indexOf(" ") + 1)));
-	                        newDiv.append(p2);
-	                        var p3 = $("<p>").attr("id", "p-3").text("￥" + product.price);
-	                        newDiv.append(p3);
-	                        $("#spin-1").append(newDiv);
-	                    }
-	                } else {
-	                    console.error("请求失败：" + xhr.status);
-	                }
-	            }
-	        };
-	
-	        // 发送请求
-	        xhr.send();
-	    }); 
+		    // 发送GET请求到服务器端
+		    $.getJSON("chaxun", { value: valueToSend }, function(data) {
+		        for (var i = 0; i < 8; i++) {
+		            var product = data[i];
+		            var newDiv = $("<div>");
+		            var img = $("<img>").attr("src", product.imagePath).attr("id", "tp");
+		            newDiv.append(img);
+		            var p1 = $("<p>").attr("id", "p-1").text(product.name);
+		            newDiv.append(p1);
+		            var p2 = $("<p>").attr("id", "p-2").text(product.config.substring(0, product.config.indexOf(" ", product.config.indexOf(" ") + 1)));
+		            newDiv.append(p2);
+		            var p3 = $("<p>").attr("id", "p-3").text("￥" + product.price);
+		            newDiv.append(p3);
+		            $("#spin-2").append(newDiv);
+		        }
+		    });
+		});
+
 	</script>
 
-</body>
-</html>
 		<link rel="stylesheet" href="../css/PeopleCenter.css"/>
 		<link rel="stylesheet" href="../css/acc.css"/>
+
 </head>
 <body>
 		<!-- 页首 -->
@@ -231,7 +212,7 @@
 						<div class="inlineBlock serachbox">
 							<form action="sousuo"  method="get" >
 							<div class="serach">
-									<input type="text" class="box" name="sc">
+									<input type="text" class="box" name="sc" value="${acc}">
 									<input type="submit" value=" " class="serachIcon"></input>
 							</div>
 							</form>
@@ -243,7 +224,6 @@
 		    <div>
 		        <div id="shangp-1">
 		            <div id="spin-1">
-		                <input type="hidden" name="fhz" value="${acc}">
 		            </div>
 		        </div>
 		    </div>

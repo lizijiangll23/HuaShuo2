@@ -23,20 +23,16 @@ public class chaxunServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        response.setContentType("application/json"); // 设置响应内容类型为JSON
-        response.setCharacterEncoding("UTF-8");
-        
-        String acc = request.getParameter("acc");
-        List<spdoucut> list = sp.spsjcx(acc);
-
-        // 将产品信息列表转换为JSON格式
-
+        response.setCharacterEncoding("utf-8");
+        String va = request.getParameter("value");
+        List<spdoucut> list = sp.spsjcx(va);
+        System.out.println(va);
         JSONArray gson = new JSONArray();
-        String json = gson.toJSONString(list);
-
-        // 将JSON数据发送回客户端
-        PrintWriter out = response.getWriter();
-        out.print(json);
-        out.flush();
+        String app = gson.toJSONString(list);
+        
+        response.setContentType("application/json");
+        
+        response.setContentType("text/html; charset=UTF-8");
+        response.getWriter().write(new String(app.getBytes("UTF-8"), "UTF-8"));
     }
 }
