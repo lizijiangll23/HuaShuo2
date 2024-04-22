@@ -1,0 +1,270 @@
+@charset "UTF-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#lan{
+	width: 85%;
+	background-color: #f1f3f5;
+	float: left;
+}
+#tian{
+	width: 98%;
+	height: 120px;
+	background-color: white;
+	margin: 14px auto;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#tian_1{
+	width: 705px;
+	height: 100%;
+	margin: 0px auto;
+}
+.qi{
+	width: 156px;
+	height: 100%;
+	background-color: white;
+	float: left;
+	margin: 0px 10px;
+}
+#shu{
+	width: 65%;
+	height: 500px;
+	background-color: white;
+	float: left;
+	margin-left: 14px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#an button{
+	margin: 10px 10px;
+	padding: 5px 8px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+#yuan table {
+    width: 100%; /* 让表格宽度铺满父元素 */
+    border-collapse: collapse; /* 让表格边框合并 */
+    border: 1px solid black; /* 设置表格边框为1px实线黑色 */
+}
+
+#yuan th, #yuan td {
+    border: 1px solid black; /* 设置单元格边框为1px实线黑色 */
+    padding: 8px; /* 添加单元格内边距 */
+    text-align: center; /* 居中显示文本 */
+}
+#xian{
+	width: 32%;
+	height: 500px;
+	background-color: white;
+	float: right;
+	margin-right: 14px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 999; /* ensure the overlay is on top of other content */
+}
+ #popup {
+ 		width:40%;
+ 		height:400px;
+ 		border-radius:5px;
+        display: none; /* 初始隐藏 */
+        position: absolute;
+        z-index: 1000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding:20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+#xto p{
+	float: left;
+}
+#xto img{
+	float: right;
+	cursor: pointer;
+}
+#xzuo{
+	position: absolute; /* 设置绝对定位，以便进行居中 */
+    top: 20px; /* 将顶部位置设置为父元素高度的50% */
+    left: 20px; /* 将左侧位置设置为父元素宽度的50% */
+	width: 40%;
+	height: 80%;
+	margin-top:30px;
+	display: flex;
+    justify-content: center; /* 水平居中 */
+}
+#xyou{
+	float: right;
+	width: 50%;
+	height: 90%;
+	margin-top:30px;
+}
+#xtox{
+	position: absolute; /* 设置绝对定位，以便进行居中 */
+    top: 10px; /* 将顶部位置设置为父元素高度的50% */
+    left: 50px; /* 将左侧位置设置为父元素宽度的50% */
+	width: 200px;
+	height: 200px;
+	border-radius:100px;
+	margin-top: 40px;
+	border: 0px;
+}
+#xuan{
+	margin-top: 300px;
+	margin-left: 50px;
+}
+#xyou h2 {
+    margin-bottom: 20px; /* 设置标题与其他元素之间的下外边距 */
+    color: #333; /* 设置标题文本颜色 */
+    text-align: center; /* 设置标题居中显示 */
+}
+#xyou input{
+	margin-left: 30px;
+}
+#xyou button{
+	padding:5px 10px;
+	margin-left: 70px;
+	margin-top: 20px;
+}
+#xyou input[type="text"],
+#xyou input[type="password"] {
+	width:200px;
+    padding: 10px; /* 设置输入框内边距 */
+    margin-bottom: 10px; /* 设置输入框与其他元素之间的下外边距 */
+    border: 1px solid #ccc; /* 设置输入框边框样式 */
+    border-radius: 4px; /* 设置输入框边框的圆角 */
+    box-sizing: border-box; /* 设置输入框的盒模型为边框盒模型，确保宽度包含边框和内边距 */
+}
+#xyou input[type="text"]:focus,
+#xyou input[type="password"]:focus {
+    border-color: #007bff; /* 设置输入框获取焦点时的边框颜色 */
+    outline: none; /* 移除输入框获取焦点时的默认轮廓样式 */
+}
+ #selectedImage {
+    width: 100%; /* 设置图片宽度为父元素宽度 */
+    height: 100%; /* 设置图片高度为父元素高度 */
+    object-fit: cover; /* 让图片尽可能地铺满整个元素，并且溢出部分隐藏 */
+}
+#xtox {
+   width: 200px; /* 设置 xtox 宽度 */
+   height: 200px; /* 设置 xtox 高度 */
+   overflow: hidden; /* 溢出部分隐藏 */
+}
+
+.goverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 999; /* ensure the overlay is on top of other content */
+}
+ #gpopup {
+ 		width:40%;
+ 		height:400px;
+ 		border-radius:5px;
+        display: none; /* 初始隐藏 */
+        position: absolute;
+        z-index: 1000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding:20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+#gto p{
+	float: left;
+}
+#gto img{
+	float: right;
+	cursor: pointer;
+}
+#gzuo{
+	position: absolute; /* 设置绝对定位，以便进行居中 */
+    top: 20px; /* 将顶部位置设置为父元素高度的50% */
+    left: 20px; /* 将左侧位置设置为父元素宽度的50% */
+	width: 40%;
+	height: 80%;
+	margin-top:30px;
+	display: flex;
+    justify-content: center; /* 水平居中 */
+}
+#gyou{
+	float: right;
+	width: 50%;
+	height: 90%;
+	margin-top:30px;
+}
+#gtox{
+	position: absolute; /* 设置绝对定位，以便进行居中 */
+    top: 10px; /* 将顶部位置设置为父元素高度的50% */
+    left: 50px; /* 将左侧位置设置为父元素宽度的50% */
+	width: 200px;
+	height: 200px;
+	border-radius:100px;
+	margin-top: 40px;
+	border: 0px;
+}
+#guan{
+	margin-top: 300px;
+	margin-left: 50px;
+}
+#gyou h2 {
+    margin-bottom: 20px; /* 设置标题与其他元素之间的下外边距 */
+    color: #333; /* 设置标题文本颜色 */
+    text-align: center; /* 设置标题居中显示 */
+}
+
+#gyou button{
+	padding:5px 10px;
+	margin-left: 70px;
+	margin-top: 20px;
+}
+#gyou input[type="text"],
+#gyou input[type="password"] {
+	width:200px;
+    padding: 10px; /* 设置输入框内边距 */
+    margin-bottom: 10px; /* 设置输入框与其他元素之间的下外边距 */
+    border: 1px solid #ccc; /* 设置输入框边框样式 */
+    border-radius: 4px; /* 设置输入框边框的圆角 */
+    box-sizing: border-box; /* 设置输入框的盒模型为边框盒模型，确保宽度包含边框和内边距 */
+}
+#gyou input[type="text"]:focus,
+#gyou input[type="password"]:focus {
+    border-color: #007bff; /* 设置输入框获取焦点时的边框颜色 */
+    outline: none; /* 移除输入框获取焦点时的默认轮廓样式 */
+}
+ #gselectedImage {
+    width: 100%; /* 设置图片宽度为父元素宽度 */
+    height: 100%; /* 设置图片高度为父元素高度 */
+    object-fit: cover; /* 让图片尽可能地铺满整个元素，并且溢出部分隐藏 */
+}
+#gtox {
+   width: 200px; /* 设置 xtox 宽度 */
+   height: 200px; /* 设置 xtox 高度 */
+   overflow: hidden; /* 溢出部分隐藏 */
+}

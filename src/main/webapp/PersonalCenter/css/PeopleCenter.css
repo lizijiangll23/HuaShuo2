@@ -88,7 +88,21 @@
 	top: 1px;
 }
 
-
+.carts{
+	position: relative;
+	padding: 0 15px 0 48px;
+	color: #ccc;
+	line-height: 38px;
+	font-size: 15px;
+	background-color: #555;
+	background-image: url("../imgs/cart.png");
+	background-size: 29px 27px;
+	background-position: 15px 6px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	height: 38px;
+	width: 110px;
+}
 
 .minicart-text{
 	font-size: 15px;
@@ -188,7 +202,19 @@
 	top: 0px;
 }
 
-
+.serachIcon{
+	border:none;
+	width: 48px;
+	height: 100%;
+	border-radius: 0 15px 15px 0;
+	background-image: url("../imgs/search.png");
+	background-size: 15px 18px;
+	background-repeat: no-repeat;
+	background-position: 15px 6px;
+	background-color: #ccc;
+	cursor: pointer;
+	float: right;
+}
 
 .rightbox a:hover{
 	color: #ffffff;
@@ -202,20 +228,6 @@
 .menu span:hover{
 	color: #00a8ff;
 	transition: 0.3s;
-}
-
-.serachIcon{
-	border:none;
-	width: 48px;
-	height: 100%;
-	border-radius: 0 15px 15px 0;
-	background-image: url("../imgs/search.png");
-	background-size: 15px 18px;
-	background-repeat: no-repeat;
-	background-position: 15px 6px;
-	background-color: #ccc;
-	cursor: pointer;
-	float: right;
 }
 
 .menu span:not(:hover){

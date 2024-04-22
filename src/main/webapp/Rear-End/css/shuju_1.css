@@ -1,0 +1,42 @@
+@charset "UTF-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#lan{
+	width: 85%;
+	height:100%;
+	background-color: #f1f3f5;
+	float: left;
+}
+#xuan{
+	width: 98%;
+	height: 100px;
+	background-color: white;
+	margin: 14px auto;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#xuan_1{
+	width: 705px;
+	height: 100%;
+	margin: 0px auto;
+}
+#ce{
+	height: 660px;
+	width: 340px;
+	background-color: white;
+	border-radius:10px;
+	float: right;
+	margin-right: 14px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#xian{
+	width: 73%;
+	height: 660px;
+	background-color: white;
+	float: left;
+	margin-left: 14px;
+	border-radius:10px;
+	box-shadow: 5px 5px 5px #888888;
+}
