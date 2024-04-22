@@ -104,31 +104,26 @@
 		
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-	<script type="text/javascript">
-		$(function() {
-		    // 要上传的值
-		    
-		    var sc = $('input[name="sc"]').val();
-			console.log(sc);
-		    // 发送GET请求到服务器端
-		    $.getJSON("chaxun", function(data) {
-		        for (var i = 0; i < data.length; i++) {
-		            var product = data[i];
-		            var newDiv = $("<div>");
-		            var img = $("<img>").attr("src", product.imagePath).attr("id", "tp");
-		            newDiv.append(img);
-		            var p1 = $("<p>").attr("id", "p-1").text(product.name);
-		            newDiv.append(p1);
-		            var p2 = $("<p>").attr("id", "p-2").text(product.config.substring(0, product.config.indexOf(" ", product.config.indexOf(" ") + 1)));
-		            newDiv.append(p2);
-		            var p3 = $("<p>").attr("id", "p-3").text("￥" + product.price);
-		            newDiv.append(p3);
-		            $("#spin-1").append(newDiv);
-		        }
+		<script type="text/javascript">
+		  $(function() {																			
+		    $.getJSON("sping", function(data) {
+		      for (var i = 0; i < 8; i++) {
+		    	console.log(data[i])
+		        var product = data[i];
+		        var newDiv = $("<div>");
+		        var img = $("<img>").attr("src", product.imagePath).attr("id", "tp");
+		        newDiv.append(img);
+		        var p1 = $("<p>").attr("id", "p-1").text(product.name);
+		        newDiv.append(p1);
+		        var p2 = $("<p>").attr("id", "p-2").text(product.config.substring(0, product.config.indexOf(" ", product.config.indexOf(" ") + 1)));
+		        newDiv.append(p2);
+		        var p3 = $("<p>").attr("id", "p-3").text("￥" + product.price);
+		        newDiv.append(p3);
+		        $("#spin-2").append(newDiv);
+		      }
 		    });
-		});
-
-	</script>
+		  }); 
+		</script>
 
 		<link rel="stylesheet" href="../css/PeopleCenter.css"/>
 		<link rel="stylesheet" href="../css/acc.css"/>
