@@ -52,7 +52,7 @@
 			#p1 a:hover{
 				color: aqua;
 			}
-			#spin-1,{
+			#spin-1{
 				width: 984px;
 				height: 600px;
 				margin: auto;
@@ -105,9 +105,13 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 		<script type="text/javascript">
-		  $(function() {																			
-		    $.getJSON("sping", function(data) {
-		      for (var i = 0; i < 8; i++) {
+		$(function() {
+		
+		var sc = $('input[name="sc"]').val();
+		console.log(sc);
+		// 发送GET请求到服务器端
+		$.getJSON("chaxun", { value: sc }, function(data) {
+		    for (var i = 0; i < data.length; i++) {
 		    	console.log(data[i])
 		        var product = data[i];
 		        var newDiv = $("<div>");
@@ -119,7 +123,7 @@
 		        newDiv.append(p2);
 		        var p3 = $("<p>").attr("id", "p-3").text("￥" + product.price);
 		        newDiv.append(p3);
-		        $("#spin-2").append(newDiv);
+		        $("#spin-1").append(newDiv);
 		      }
 		    });
 		  }); 
