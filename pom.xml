@@ -125,16 +125,6 @@
 	   <artifactId>credentials-java</artifactId>
 	   <version>LATEST</version>
 	</dependency>
-	<dependency>
-		<groupId>com.zktr</groupId>
-		<artifactId>MedicineApp</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
-	<dependency>
-		<groupId>com.zktr</groupId>
-		<artifactId>trWeb</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
 
 	</dependencies>
 
