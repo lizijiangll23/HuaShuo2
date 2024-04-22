@@ -271,7 +271,7 @@ $(function(){
   $(".btns").click(function(event){
     // 阻止表单的默认提交行为
     event.preventDefault();
-
+	
     // 获取用户输入的验证码
     var userInputCode = $(".inputs").val();
     // 获取发送的验证码
@@ -315,6 +315,8 @@ $(function(){
 	    }
 	    e.preventDefault();
 	  });
+
+	  
   
 });
 </script>

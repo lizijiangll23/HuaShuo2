@@ -1,0 +1,378 @@
+@charset "UTF-8";
+.page{
+	width: 1226px;
+    margin: 0 auto;
+}
+.bread-crumbs{
+	font-size: 14px;
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 29px;
+    margin-top: 17px;
+}
+.cart-title{
+	background-color: #fff;
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+.cart-title h1{
+	float: left;
+    line-height: 70px;
+    font-size: 24px;
+    color: #404040;
+}
+.order_main{
+	color: #666;
+}
+.order-clearing-wrap{
+	padding: 0 30px 30px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.order_shipping{
+	background-color: #fff;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0 30px 30px;
+    position: relative;
+}
+.order-section-title{
+	background-color: #fff;
+    font-size: 20px;
+    color: #404040;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 14px;
+}
+.order-section-title b{
+	font-size: 20px;
+    font-weight: normal;
+    padding-right: 20px;
+}
+.order-section-content{
+	padding: 30px 0 0;
+    position: relative;
+}
+
+#change_shipping{
+	line-height: 20px;
+    margin: 0 auto;
+}
+.shipping-item{
+	padding: 20px 30px;
+    width: 220px;
+    height: 130px;
+    border: 1px solid #b0b0b0;
+    float: left;
+    margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+}
+.action-change-shipping{
+	opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	vertical-align: top;
+}
+
+.shipping-item label{
+	display: inline-block;
+    vertical-align: top;
+    width: 97%;
+}
+.addr_name{
+	font-size: 18px;
+    color: #262626;
+    margin-bottom: 10px;
+}
+.add{
+	width: 100%;
+    padding: 0;
+    font-size: 14px;
+    color: #404040;
+    line-height: 22px;
+	display: inline-block;
+    vertical-align: top;
+}
+.shipping-item em{
+	text-align: right;
+    display: block;
+    position: absolute;
+    bottom: 13px;
+    right: 30px;
+    vertical-align: top;  
+	font-style: normal;      
+}
+
+.lnklike{
+	padding: 0;
+    color: #00a8ff;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#add_new_addr{
+	margin-top: 20px;
+    border: none;
+    width: 1000px;
+    height: auto;
+    margin-right: 0;
+    float: left;
+}
+.add_new_addr label {
+	display: inline-block;
+    vertical-align: top;
+    width: 97%;
+    cursor: pointer;
+}
+.addaddress{
+	color: #00a8ff;
+    font-size: 14px;
+    width: 100%;
+    padding: 0;
+    line-height: 22px;
+    display: inline-block;
+    vertical-align: top;        
+}
+#adds{
+	width:30px;
+	height:30px;
+    vertical-align: middle;
+    margin:0 5px 0 0 ;
+    float:left;
+}
+.addaddress span{
+	float:left;
+	line-height:30px;
+}
+.hand{
+	cursor: pointer;
+}
+.add_new_addr_box{
+	bottom: -8px;
+	width: 945px;
+    position: relative;
+    background-color: #fff;
+}
+.fill-shipping{
+    width: 945px;
+    margin-left: 0;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #666;        	
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;	
+}
+.fill-shipping th{
+	width: 12%;
+	text-align: left;
+    padding-right: 24px;
+    font-weight: 400;
+    white-space: nowrap;    
+}
+.fill-shipping th>em{
+	color:red;
+}
+
+.fill-shipping td{
+	padding: 15px 0;
+    position: relative;
+}
+
+.fill-shipping input{
+    width: 332px;
+    height: 38px;
+    padding: 0;
+    padding-left: 18px;
+}
+.cancel,.subbtn{
+    width: 106px;
+    height: 26px;
+    background: #00a8ff;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 26px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 14px;
+    margin-top: 15px;   
+    float:right;	
+}
+.cancel{
+	background: #fff;
+    border: 1px solid #aaaaaa;
+    color: #808080;
+}
+.cart-main-wrap{
+	height:655px;
+    padding: 0 30px 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    overflow: overlay;
+}
+.common-page{
+	background-color: #fff;
+}
+.cart-main{
+	border: none;
+    margin-bottom: 25px;
+    color: #666;
+	table-layout: fixed;    
+}
+.common-page .order-section-title{
+    border-bottom: none;
+}
+.order-page-head {
+	height: 35px;
+    line-height: 35px;
+    background-color: #f2f2f2;
+    padding-left: 28px;
+    
+}
+.cart-input, .cart-goods, .cart-price, .cart-num, .cart-discount, .cart-point, .cart-subtotal, .cart-action {
+    width: 110px;
+    text-align: left;
+}
+.p-pic{
+	width: 100px;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+    float: left;
+}
+.p-title{
+	margin-left: 10px;
+    line-height: 18px;
+    margin-top: 20px;
+    width: 375px;
+    float: left;
+}
+.order-page-head li{
+	text-align: center;
+}
+.cart-item{
+	border: 1px solid #e3e2e2;
+    margin-bottom: 25px;
+    padding: 0 28px 20px;
+    padding-top:20px;
+}
+.cart-list .p-pic img{
+	width: 100px;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+}
+.order-clearing{
+	border: none;
+	width: 100%;
+    margin-top: 10px;
+    color: #666;	
+}
+
+.order-clearing caption{
+	background-color: #fff;
+    font-size: 20px;
+    color: #404040;
+    height: 60px;
+    line-height: 60px;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    padding: 0 15px;
+    text-align: left;
+}
+#order-price{
+	background-color: #fff;
+    height: 70px;
+    padding: 0 16px;
+}
+.order-price{
+	border-left: none;
+    width: 232px;
+    vertical-align: top;
+    text-align: right;
+    font-size: 14px;    
+}
+.inner{
+	width: 264px;
+	position: relative;
+    float: right;
+}
+
+.inner ul{
+	width: 232px;
+    margin-top: 20px;
+}
+
+.btnarea{
+	margin-top: 10px;
+	margin-right: 50px;
+}
+
+.inner li{
+	clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.total{
+    margin-top: 10px;
+    line-height: 40px;
+}
+
+.label{
+	font-size: 18px;
+    width: 80px;
+    float: left;
+    text-align: left;
+}
+
+.total em,b{
+	font-weight: normal;
+	font-style: normal;
+}
+
+.price{
+  	width: 133px;
+    color: #00a8ff;
+    font-size: 14px;
+    text-align: right;
+	padding-left: 2px;
+	float: left;
+}
+
+.price b{
+	font: 24px / 1.5 Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.onbtn{
+	background: #00a8ff;
+    width: 216px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    border-radius: 5px;
+	font-size: 116.66667%;
+	color: #fff;
+	border: 0 none;
+}
+.btn-link{
+	float: none;
+    color: #00a8ff;
+    line-height: 20px;
+    display: block;
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 0;
+    font-size: 14px;
+}

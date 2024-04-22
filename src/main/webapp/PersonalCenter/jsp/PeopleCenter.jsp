@@ -20,7 +20,9 @@
 	li{
 		list-style: none;
 	}
-	
+	.serachIcon{
+		border:none;
+	}
 </style>
 <script src="../js/jquery-3.5.1.min.js"></script>
 
@@ -122,5 +124,25 @@
 		</div>
 	<%@include file="footer.jsp" %>
 </body>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    // 发送异步请求获取已有收货地址数量
+    $.ajax({
+      url: "../../ShopServlet",
+      type: "POST",
+      dataType: "json",
+      success: function(response) {
+        // 处理后端返回的数据
+        var addressCount = response.addressCount; // 假设后端返回的数据中有一个名为addressCount的字段表示地址数量
+        $(".number").text(addressCount); // 将地址数量更新到页面上
+        
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log("请求失败：" + textStatus + "，" + errorThrown);
+      }
+    });
+  });
+</script>
 
 </html>

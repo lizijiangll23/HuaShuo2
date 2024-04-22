@@ -19,90 +19,12 @@
 		li{
 			list-style: none;
 		}
+		.serachIcon{
+			border:none;
+		}
 </style>
 <link rel="stylesheet" href="../../css/PeopleCenter.css"/>
-<div class="header">
-			<div class="topBar clearfix">
-				<div class="containerWidth">
-					<div class="leftbox">
-						<a href="">华硕官网</a>
-						<span>|</span>
-						<a href="">商城首页</a>
-						<span>|</span>
-						<a href="">驱动下载</a>
-						<span>|</span>
-						<a href="">装机必备</a>
-						<span>|</span>
-						<a href="">以旧换新</a>
-					</div>
-					<div class="rightbox">
-						<span style="display: inline-block;">
-							<!-- !!!跳转登录或登录 -->
-							<a href="#" class="inlineBlock">${user.uname}</a>
-							<span style="display: inline-block;color: #ccc;font-size: 14px;vertical-align: middle;margin: 0 -4px 1px;">|</span>
-							<a href="../../../Front/jsp/Loding.jsp" class="inlineBlock">退出</a>
-						</span>
-						
-						<span>|</span>
-						<a href="" id="imp">
-							<!-- !!!跳转消息 -->
-							<font onclick="$(function(){alert("跳转消息")})" style="display: inline-block;outline: none;">
-								消息
-							</font>
-						</a>
-						
-						<span>|</span>
-						<a href="../order/c_order.jsp" id="imp1">我的订单</a>
-						<div class="inlineBlock carts">
-							<a href="" class="minicart-text">
-								<span class="inlineBlock">
-									购物车
-									<span>(</span>
-									<b class="number">0</b>
-									<span>)</span>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="topModule">
-				<div class="containerWidth">
-					<div class="inlineBlock logobox">
-						<a href="" class="inlineBlock">
-							<img src="../../imgs/logo.png" class="logo">
-						</a>
-						<a href="" class="inlineBlock">
-							<img src="../../imgs/10.gif" class="ten">
-						</a>
-					</div>
-					<div class="inlineBlock menu">
-						<a href="" class="inlineBlock menuItem">
-							<img src="../../imgs/smallten.png" class="inlineBlock icon">
-							<span class="inlineBlock txt">华硕电脑官网</span>
-						</a>
-						<a href="" class="inlineBlock menuItem">
-							<img src="../../imgs/smallten.png" class="inlineBlock icon">
-							<span class="inlineBlock txt">ROG电竞馆</span>
-						</a>
-						<a href="" class="inlineBlock menuItem">
-							<img src="../../imgs/nian.png" class="inlineBlock icon">
-							<span class="inlineBlock txt">a豆智能馆</span>
-						</a>
-						<a href="" class="inlineBlock menuItem">
-							<img src="../../imgs/qing.png" class="inlineBlock icon">
-							<span class="inlineBlock txt">中小企业采购</span>
-						</a>
-					</div>
-					<div class="inlineBlock serachbox">
-						<div class="serach">
-							<input type="text" class="box">
-							<span class="serachIcon"></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<%@include file="head.jsp" %>
 	<!-- 个人中心主体部分 -->
 		<div id="body">
 			<div id="center">
@@ -184,11 +106,11 @@
 												<label class="form_label">性别:</label>
 												<span class="form-act">
 													<span class="form_radio">
-														<input type="radio" class="radio" name="sex" value="男" checked>
+														<input type="radio" id="man" class="radio" name="sex" value="男" checked>
 														男
 													</span>
 													<span class="form_radio">
-														<input type="radio" class="radio" name="sex" value="女">
+														<input type="radio" id="woman" class="radio" name="sex" value="女">
 														女
 													</span>
 												</span>
@@ -196,7 +118,7 @@
 											<li class="form-item">
 												<label class="form_label">生日:</label>
 												<span class="form-act">
-													<select name="year" id="year" class="bir-sel" ></select>年
+													<select name="year" id="year" class="bir-sel"></select>年
 													<select name="month" id="month" class="bir-sel"></select>月
 													<select name="day" id="day" class="bir-sel"></select>日
 												</span>
@@ -235,299 +157,109 @@
 			</div>
 		</div>
 	<!-- 页尾 -->
-	<div id="footer" class="footer">
-			<div id="footer-service">
-				<div id="service">
-					<div class="page">
-						<ul class="clearfix">
-							<li class="zhiy">
-								<img src="../../imgs/guanfzhiying.png">
-								官方直营
-							</li>
-							<li class="yiwai">
-								<img src="../../imgs/yiwai.png">
-								笔记本意外险
-							</li>
-							<li class="baoyou">
-								<img src="../../imgs/baoyou.png">
-								全场包邮
-							</li>
-							<li class="wuyou">
-								<img src="../../imgs/wuyou.png">
-								7天无忧退
-							</li>
-							<li class="huabei">
-								<img src="../../imgs/huabei.png">
-								支付宝花呗分期
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<div id="footer-helper">
-				<div id="helper">
-					<div class="page clearfix">
-						<div class="helper-item">
-							<dl >
-								<dt class="content-title">
-									<a href="#">公司介绍</a>
-								</dt>
-								<dd>
-									<a href="#">华硕承诺</a>
-								</dd>
-								<dd>
-									<a href="#">交易条款</a>
-								</dd>
-								<dd>
-									<a href="#">特别提醒</a>
-								</dd>
-								<dd>
-									<a href="#">加入我们</a>
-								</dd>
-							</dl>
-						</div>
-						<div class="helper-item">
-							<dl>
-								<dt class="content-title">
-									<a href="#">购物指南</a>
-								</dt>
-								<dd>
-									<a href="#">订单说明</a>
-								</dd>
-								<dd>
-									<a href="#">会员注册</a>
-								</dd>
-								<dd>
-									<a href="#">会员账户安全与信息</a>
-								</dd>
-								<dd>
-									<a href="#">购物流程</a>
-								</dd>
-								<dd>
-									<a href="#">积分使用说明</a>
-								</dd>
-								<dd>
-									<a href="#">优惠券使用说明</a>
-								</dd>
-								<dd>
-									<a href="#">常见问题</a>
-								</dd>
-								<dd>
-									<a href="#">华硕商城服务协议说明 </a>
-								</dd>
-								<dd>
-									<a href="#">授权服务店服务说明</a>
-								</dd>
-								<dd>
-									<a href="#">授权服务店服务说明</a>
-								</dd>
-								<dd>
-									<a href="#">以旧换新</a>
-								</dd>
-								<dd>
-									<a href="#">预约规则</a>
-								</dd>
-								<dd>
-									<a href="#">预售规则</a>
-								</dd>
-							</dl>
-						</div>
-						<div class="helper-item">
-							<dl>
-								<dt class="content-title">
-									<a href="#">配送与付款</a>
-								</dt>
-								<dd>
-									<a href="#">发货与签收规范</a>
-								</dd>
-								<dd>
-									<a href="#">配送运费说明</a>
-								</dd>
-								<dd>
-									<a href="#">配送常见问题</a>
-								</dd>
-								<dd>
-									<a href="#">配送异常</a>
-								</dd>
-								<dd>
-									<a href="#">支付常见问题</a>
-								</dd>
-								<dd>
-									<a href="#">发票说明</a>
-								</dd>
-								<dd>
-									<a href="#">蚂蚁花呗常见问题</a>
-								</dd>
-							</dl>
-						</div>
-						<div class="helper-item">
-							<dl>
-								<dt class="content-title">
-									<a href="#">服务与支持</a>
-								</dt>
-								<dd>
-									<a href="#">华硕服务中心查询</a>
-								</dd>
-								<dd>
-									<a href="#">华硕授权实体门店查询</a>
-								</dd>
-								<dd>
-									<a href="#">华硕智汇家体验店</a>
-								</dd>
-								<dd>
-									<a href="#">中国RoHS合格评定标识</a>
-								</dd>
-								<dd>
-									<a href="#">华硕笔记本保修政策说明</a>
-								</dd>
-								<dd>
-									<a href="#">ROG玩家国度授权体验店</a>
-								</dd>
-								<dd>
-									<a href="#">参与调研</a>
-								</dd>
-							</dl>
-						</div>
-						<div class="helper-item" style="width: 270px;text-align: center;margin-right: 0;">
-							<p class="ewm-title">400-091-9520</p>
-							<p class="ewm-subtitle">专属服务热线</p>
-							<img class="ewm-img" src="../../imgs/ewm.png">
-							<p class="ewm-but">扫码进入小程序</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div id="help" class="help">
-				<div id="help-text">
-					<p>&nbsp;</p>
-					<p>有任何购物问题请联系商城客服 | 电话：400-091-9520</p>
-					<p>
-						<a href="">营业执照：12000002202112290026</a>
-						&nbsp;|
-						<a href="">沪ICP备11025349号-3</a>
-						&nbsp; │ ASUSTeK Computer Inc. All Rights Reserved.
-					</p>
-					<div style="margin:0 auto; padding:20px 0;text-align: center;">
-						<p class="footer_txt">
-							<a href="">ASUS使用条款</a>
-							<a href="">隐私政策</a>
-							<a href="">隐私说明</a>
-							<img src="//static.asus.com.cn/static/store/images/735f16509d9a54d5ddade073f133e7dcf2c0a486.png?1499224546#h">
-							<a href="">沪公网安备 31011202002313号</a>
-						</p>
-						
-					</div>
-				</div>
-			</div>
-			
-		</div>
+	<%@include file="footer.jsp" %>	
 </body>
 <script type="text/javascript" src="../../js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript">
-	
-$(function(){
-	/*  $("#myCheckbox").submit(function(e) {
-	    e.preventDefault();
+<script>
+$(function() {
+	  // 获取生日字符串
+	  var birthday = "${user.birthday}";
 
-	    var yearSelected = $("#year").val();
-	    var monthSelected = $("#month").val();
-	    var daySelected = $("#day").val();
-	    // 检查年月日是否已选择
-	    if (yearSelected == null || monthSelected == null || daySelected == null) {
-	        alert("请完整填写个人信息并选择生日。");
+	  // 根据"-"分割生日字符串
+	  var birthdayArray = birthday.split("-");
+
+	  // 将分割后的数值赋给相应的下拉框
+	  var yearSelect = $("#year");
+	  var monthSelect = $("#month");
+	  var daySelect = $("#day");
+
+	  // 设置年份下拉框的值
+	  var currentYear = new Date().getFullYear(); // 当前年份
+	  var startYear = currentYear - 100; // 起始年份为当前年份的前100年
+	  for (var i = currentYear; i >= startYear; i--) {
+	    yearSelect.append("<option value='" + i + "'>" + i + "</option>");
+	  }
+	  yearSelect.val(birthdayArray[0]); // 年份
+
+	  // 设置月份下拉框的值
+	  for (var j = 1; j <= 12; j++) {
+	    var monthValue = j < 10 ? "0" + j : j; // 格式化月份值，保证为两位数
+	    monthSelect.append("<option value='" + monthValue + "'>" + monthValue + "</option>");
+	  }
+	  monthSelect.val(birthdayArray[1]); // 月份
+
+	  // 设置日期下拉框的值
+	  var year = parseInt(birthdayArray[0]);
+	  var month = parseInt(birthdayArray[1]);
+	  var maxDay = 0;
+	  if (month === 2) {
+	    // 闰年判断：能被4整除但不能被100整除，或者能被400整除的年份是闰年
+	    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+	      maxDay = 29; // 闰年2月份有29天
 	    } else {
-	        // 获取生日的值
-	        var birthday = yearSelected + "-" + monthSelected + "-" + daySelected;
-
-	        // 检查表单其他字段是否填写完整
-	        var username = $(".username").val();
-	        var email = $(".useremail").val();
-	        var checkboxChecked = $("#license").prop("checked");
-
-	        // 使用正则表达式判断邮箱格式是否正确
-	        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	        if (username === "" || email === "" || !emailRegex.test(email) || !checkboxChecked) {
-	            alert("请完整填写个人信息并正确填写邮箱，并同意使用条款等。");
-	        } else {
-	        	
-	        }
-	    } 
-	});  */
-	
-	var no = "${no}";
-	if(no=="no"){
-		alert("请填写完整信息!");
-		no = "";
-	} else if(no=="check"){
-		alert("请同意使用条款!");
-		no = "";
-	} else if(no=="email"){
-		alert("邮箱请填写正确!");
-		no = "";
-	}
-	
-	
-	// 生成年份选项
-	var yearSelect = $("#year");
-	var currentYear = new Date().getFullYear();
-	for (var i = currentYear; i >= currentYear - 100; i--) {
-	    var option = $("<option>").text(i);
-	    yearSelect.append(option);
-	}
-
-	// 监听年份下拉框的变化
-	yearSelect.on("change", function() {
-	    var monthSelect = $("#month");
-	    monthSelect.css("display", "inline-block"); // 显示月份下拉框
-
-	    // 生成月份选项
-	    for (var i = 1; i <= 12; i++) {
-	        var option = $("<option>").text(i);
-	        monthSelect.append(option);
+	      maxDay = 28; // 平年2月份有28天
 	    }
+	  } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+	    maxDay = 30; // 4、6、9、11月份有30天
+	  } else {
+	    maxDay = 31; // 其他月份有31天
+	  }
+	  for (var k = 1; k <= maxDay; k++) {
+	    var dayValue = k < 10 ? "0" + k : k; // 格式化日期值，保证为两位数
+	    daySelect.append("<option value='" + dayValue + "'>" + dayValue + "</option>");
+	  }
+	  daySelect.val(birthdayArray[2]); // 日期
+
+	  // 获取性别
+	  var sex = "${user.sex}";
+	  var maleRadio = $("#man");
+	  var femaleRadio = $("#woman");
+	  
+	  
+	  // 根据性别选择单选框
+	  if (sex == "男") {
+	    maleRadio.prop("checked", true);
+	  } else if (sex == "女") {
+	    femaleRadio.prop("checked", true);
+	  }
 	});
 
-	// 监听月份下拉框的变化
-	var monthSelect = $("#month");
-	monthSelect.on("change", function() {
-	    var daySelect = $("#day");
-	    daySelect.css("display", "inline-block"); // 显示日期下拉框
-
-	    // 获取选择的年份和月份
-	    var year = parseInt(yearSelect.val());
-	    var month = parseInt(monthSelect.val());
-	    var daysInMonth = 31;
-
-	    if (month == 2) {
-	        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-	            daysInMonth = 29; // 闰年2月有29天
-	        } else {
-	            daysInMonth = 28; // 平年2月有28天
-	        }
-	    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-	        daysInMonth = 30; // 4、6、9、11月有30天
-	    }
-
-	    // 生成日期选项
-	    for (var i = 1; i <= daysInMonth; i++) {
-	        var option = $("<option>").text(i);
-	        daySelect.append(option);
-	    }
-	});
-	
 	$(function() {
-	    // 点击更改头像按钮时触发事件
-	    $(".changehead").on("click", function(e) {
-	        e.preventDefault();
-	        // 触发隐藏的文件上传框的点击事件
-	        $("#avatar").click();
-	    });
+	  // 点击更改头像按钮时触发事件
+	  $(".changehead").on("click", function(e) {
+	    e.preventDefault();
+	    // 触发隐藏的文件上传框的点击事件
+	    $("#avatar").click();
+	  });
 	});
-});
-	
-	
-	
+
+	var no = "${no}";
+	if (no == "no") {
+	  alert("请填写完整信息!");
+	  no = "";
+	} else if (no == "check") {
+	  alert("请同意使用条款!");
+	  no = "";
+	} else if (no == "email") {
+	  alert("邮箱请填写正确!");
+	  no = "";
+	}
+	$(document).ready(function() {
+	    // 发送异步请求获取已有收货地址数量
+	    $.ajax({
+	    	url: "../../../ShopServlet",
+	      type: "POST",
+	      dataType: "json",
+	      success: function(response) {
+	        // 处理后端返回的数据
+	        var addressCount = response.addressCount; // 假设后端返回的数据中有一个名为addressCount的字段表示地址数量
+	        $(".number").text(addressCount); // 将地址数量更新到页面上
+	        
+	      },
+	      error: function(jqXHR, textStatus, errorThrown) {
+	        console.log("请求失败：" + textStatus + "，" + errorThrown);
+	      }
+	    });
+	  });
 </script>
 </html>
