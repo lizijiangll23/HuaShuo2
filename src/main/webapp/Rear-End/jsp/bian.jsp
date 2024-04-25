@@ -30,9 +30,8 @@
 				商品中心<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>商品列表</li>
+				<li onclick="li()">商品列表</li>
 				<li>添加商品</li>
-				<li>商品管理</li>
 			</ul>
 		</li>
 		<li>
@@ -50,7 +49,6 @@
 			</div>
 			<ul class="sub-items hidden">
 				<li onclick="lun()">轮播图管理</li>
-				<li>广告管理</li>
 			</ul>
 		</li>
 		<li>
@@ -62,19 +60,11 @@
 				<li onclick="guan()">管理员账号管理</li>
 			</ul>
 		</li>
-		<li>
-			<div class="item">
-				处理事件<img class="xia" src="../imgs/下拉图标.png" />
-			</div>
-			<ul class="sub-items hidden">
-				<li>订单申诉</li>
-			</ul>
-		</li>
 	</ul>
 </div>
 	<script>
 		function shu() {
-			window.location.href = "ShanLunBo";
+			window.location.href = "ShouYie";
 		}
 		function lun() {
 			window.location.href = "LunTu";
@@ -84,5 +74,8 @@
 		}
 		function guan() {
 			window.location.href = "GuanLi";
+		}
+		function li() {
+			window.location.href = "Shang";
 		}
 		</script>

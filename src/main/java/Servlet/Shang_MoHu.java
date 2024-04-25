@@ -10,25 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Shang
+ * Servlet implementation class Shang_MoHu
  */
-@WebServlet("/Rear-End/jsp/Shang")
-public class Shang extends HttpServlet {
+@WebServlet("/Rear-End/jsp/Shang_MoHu")
+public class Shang_MoHu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String tiao =request.getParameter("tiao");
 		com.zktr.dao.ShangDAO shang = new com.zktr.dao.ShangDAO();
-		String curpagestring = request.getParameter("curpage");
-		String pagesizestring = request.getParameter("pagesize");
-		int curpage=0;
-		int pagesize=0;
-		if(curpagestring==null||pagesizestring==null) {
-			curpage=1;
-	        pagesize=3;
-	    }
-		java.util.Map<String,Object> map = shang.cha(curpage,pagesize);
-		java.util.List<Shang> list = (List<Shang>) map.get("list");
+		List<com.zktr.dao.Shang> list = shang.mohu(tiao);
 		request.getSession().setAttribute("list", list);
-		request.getSession().setAttribute("total", map.get("total"));
 		request.getRequestDispatcher("ShangPi.jsp").forward(request, response);
 	}
 

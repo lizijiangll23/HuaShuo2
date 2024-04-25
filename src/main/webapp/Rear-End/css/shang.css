@@ -1,0 +1,57 @@
+@charset "UTF-8";
+#da{
+	width: 100%;
+	height: 430px;
+	
+}
+#product-table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#product-table td, #product-table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#product-table th {
+  background-color: #f2f2f2;
+}
+.oy_p{
+		font-size: 14px;
+	}
+	a{
+		text-decoration: none;
+		margin: 5px 5px;
+		padding: 2px 6px;
+		border: 1px solid gray;
+		font-size: 12px;
+		border-radius:4px;
+		cursor:pointer;
+	}
+	a:hover{
+		padding: 3px 7px;
+		
+	}
+	
+	table {
+	  border-collapse: collapse;
+	  width: 30%;
+	}
+	td {
+	  text-align: center;
+	  padding: 5px;
+	  border: none;
+	}
+	
+	
+	 #xlb option:first-child {
+    display: none;
+  }
+   .shangtu img {
+    width: 100%; /* 图片宽度填满父容器 */
+    height: 100%; /* 图片高度填满父容器 */
+    object-fit: cover; /* 图片填满容器，保持比例，可能会裁剪部分内容 */
+  }

@@ -133,7 +133,7 @@
         var img = document.getElementById("tu"+xuhao);
         var src = img.getAttribute("src");
         console.log('当前点击的图片地址：', src);
-        console.log('当前点击的图片序号：', xuhao);
+        console.log('当前点击的图片序号：', xuhao); 
 
         // 弹出确认框，询问用户是否确定执行操作
         var confirmAction = confirm("确定要执行操作吗？");

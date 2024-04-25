@@ -62,7 +62,7 @@
 	</tag>
 	<tag>
 		<name>page</name>
-		<tag-class>tag.PageTag</tag-class>
+		<tag-class>com.zktr.tag.PageTag</tag-class>
 		<body-content>empty</body-content>
 		
 		<attribute>
