@@ -57,7 +57,9 @@
    <option value="value2">游戏笔记本</option>
    <option value="value3">台式笔记本</option>
 </select>
-
+<!-- 分页隐藏作用域 -->
+			<input type="hidden" name="curpage" value="${param.curpage}">
+	    	<input type="hidden" name="pagesize" value="9">
 <select id="mySelect2" onchange="handleSelectChange2()">
 	<option>全部类型</option>
    <option value="value1">灵耀</option>
@@ -70,9 +72,7 @@
 </select>
 	</div>
 	<div id = "da">
-	<!-- 分页隐藏作用域 -->
-			<input type="hidden" name="curpage" value="${param.curpage}">
-	    	<input type="hidden" name="pagesize" value="3">
+
 	<table id="product-table">
   <tr>
     <th><input type="checkbox"></th>
@@ -98,7 +98,7 @@
 	</c:forEach>
 </table>
 </div>
-	<p:page controller="Shang" pagesize="3" total="${total}" curpage="${curpage}"/>
+	<p:page controller="Shang" pagesize="9" total="${total}" curpage="${param.curpage}"/>
 	<div id = "xwei">
 	<div id = "xwei_1">
 	<c:forEach items="${io}" var="u">

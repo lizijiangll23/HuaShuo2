@@ -4,12 +4,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class GuanLiDAO extends BaseDAO{
-	public java.util.List<GuanLiYuan> cha(){
-		String sql = "select * from hs_administrators";
-		return this.executeQuery(sql, new Mapper<GuanLiYuan>() {
+	public java.util.Map<String, Object> cha(int curpage,int pagesize){
+		String sql = "select * from hs_administrators limit ?,?";
+		String sql2 = "select COUNT(*) from hs_administrators";
+		List<GuanLiYuan> list = this.executeQuery(sql, new Mapper<GuanLiYuan>() {
 			@Override
 			public List<GuanLiYuan> map(ResultSet rs) throws SQLException {
 				List<GuanLiYuan> list = new ArrayList<>();
@@ -25,7 +27,14 @@ public class GuanLiDAO extends BaseDAO{
 				return list;
 			}
 			
-		});
+		},(curpage - 1) * pagesize, pagesize);
+		Object obj = this.singleObject(sql2);
+		Map<String, Object> map = new java.util.HashMap<String,Object>();
+		System.out.println(list);
+		System.out.println(obj);
+	    map.put("list", list);
+	    map.put("total", obj);
+	    return map;
 }
 	public Object bian() {
 	    String sql = "SELECT ad_id FROM hs_administrators ORDER BY ad_id DESC LIMIT 1 ";

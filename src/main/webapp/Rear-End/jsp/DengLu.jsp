@@ -17,39 +17,48 @@
 <link href="loginSpecial/css/demo.css" rel="stylesheet" type="text/css" />
 <link href="loginSpecial/css/loaders.css" rel="stylesheet" type="text/css" />
 <script src="loginSpecial/js/jquery-2.1.1.min.js"></script>
-
 <script type="text/javascript">
-    $(function() {
-        $("[type=button]").click(function() { 
-            const userInput = $(".ValidateNum").val().toUpperCase();
-            const storedCaptcha = document.getElementById("myCanvas");
-            var name = $("[name=login]").val();
-            var pass = $("[name=pwd]").val();
-            alert(userInput+","+storedCaptcha);
-            if (userInput === storedCaptcha) {
-                $.ajax({
-                    type : "post",
-                    url : "../../administratorsServlet",
-                    data : {
-                        "op" : "dengLu",
-                        "adm_Name" : name,
-                        "adm_Pass" : pass
-                    },
-                    success : function(x) {
-                        var pd = eval(x).row;
-                        if (pd == 0) {
-                            alert('您的账号或密码错误');
-                        } else {
-                            alert("登录成功")
-                        }
-                    }
-                });
-            } else {
-                alert("验证码错误，请重试");
-                Code(); // If captcha is incorrect, regenerate new captcha
-            }
-        });
-    })
+    ///用户名
+        $("[name=login]").blur(function() {
+            var name = $("[name=login]").val();
+            $.ajax({
+                type : "post",
+                url : "../../administratorsServlet",
+                data : {
+                    "op" : "dengLuu",
+                    "adm_Name" : name
+                },
+                success : function(x) {
+                    var pd = eval(x).row;
+                    if (pd == 0) {
+                        ErroAlert('您的用户名错误');
+                    } else {
+
+                    }
+                }
+            });
+        });
+        $("[name=pwd]").blur(function() {
+            var name = $("[name=login]").val();
+            var pass = $("[name=pwd]").val();
+            $.ajax({
+                type : "post",
+                url : "../../administratorsServlet",
+                data : {
+                    "op" : "dengLu",
+                    "adm_Name" : name,
+                    "adm_Pass" : pass
+                },
+                success : function(x) {
+                    var pd = eval(x).row;
+                    if (pd == 0) {
+                        ErroAlert('您的密码错误');
+                    } else {
+
+                    }
+                }
+            });
+        });
 </script>
 </head>
 <body>
@@ -61,27 +70,27 @@
         <div class='login_fields'>
             <div class='login_fields__user'>
                 <div class='icon'>
-                    <img alt="" src='../images/user_icon_copy.png'>
+                    <img alt="" src='loginSpecial/img/user_icon_copy.png'>
                 </div>
                 <input name="login" placeholder='用户名' maxlength="16"
                     class="username" type='text' autocomplete="off" />
                 <div class='validation'>
-                    <img alt="" src='../images/tick.png'>
+                    <img alt="" src='loginSpecial/img/tick.png'>
                 </div>
             </div>
             <div class='login_fields__password'>
                 <div class='icon'>
-                    <img alt="" src='../images/lock_icon_copy.png'>
+                    <img alt="" src='loginSpecial/img/lock_icon_copy.png'>
                 </div>
                 <input name="pwd" class="passwordNumder" placeholder='密码'
                     maxlength="16" type='text' autocomplete="off">
                 <div class='validation'>
-                    <img alt="" src='../images/tick.png'>
+                    <img alt="" src='loginSpecial/img/tick.png'>
                 </div>
             </div>
             <div class='login_fields__password'>
                 <div class='icon'>
-                    <img alt="" src='../images/key.png'>
+                    <img alt="" src='loginSpecial/img/key.png'>
                 </div>
                 <input placeholder='验证码' maxlength="4"
                     class="ValidateNum" type='text' autocomplete="off">
@@ -110,14 +119,15 @@
         <p>认证中...</p>
     </div>
     <div class="OverWindows"></div>
-    <link href="loginSpecial/js/layui/css/layui.css" rel="stylesheet" type="text/css" />
+	<link href="layui/layui/css/layui.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="loginSpecial/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src='loginSpecial/js/stopExecutionOnTimeout.js?t=1'></script>
-    <script src="loginSpecial/js/layui/layui.js" type="text/javascript"></script>
+    
     <script src="loginSpecial/js/Particleground.js" type="text/javascript"></script>
     <script src="loginSpecial/js/Treatment.js" type="text/javascript"></script>
     <script src="loginSpecial/js/jquery.mockjax.js" type="text/javascript"></script>
-    <script src="loginSpecial/js/controlLogin.js?v=<%=System.currentTimeMillis()%>"
-        type="text/javascript"></script>
+	<script src="layui/layui/layui.js" type="text/javascript"></script>
+		<script src="loginSpecial/js/controlLogin(1).js"></script>
+
 </body>
 </html>

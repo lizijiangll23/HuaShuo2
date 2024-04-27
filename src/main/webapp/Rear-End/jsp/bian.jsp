@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<link href="../css/hd.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/hou.css" rel="stylesheet" type="text/css"/>
 		<script src="../js/jquery-2.1.1.min.js"></script>
 		
 	<div id="to">
@@ -39,8 +39,7 @@
 				订单中心<img class="xia" src="../imgs/下拉图标.png" />
 			</div>
 			<ul class="sub-items hidden">
-				<li>订单列表</li>
-				<li>退货款管理</li>
+				<li onclick="dan()">订单列表</li>
 			</ul>
 		</li>
 		<li>
@@ -77,5 +76,8 @@
 		}
 		function li() {
 			window.location.href = "Shang";
+		}
+		function dan() {
+			window.location.href = "Dindancha";
 		}
 		</script>

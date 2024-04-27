@@ -18,7 +18,7 @@
 
     option = {
   title: {
-    text: 'Login Log'
+    text: 'Login'
   },
   tooltip: {
     trigger: 'axis',
@@ -78,7 +78,7 @@
   },
   series: [
     {
-      name: 'Electricity',
+      name: 'people',
       type: 'line',
       smooth: true,
       // prettier-ignore

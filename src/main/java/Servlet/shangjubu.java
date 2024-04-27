@@ -1,6 +1,8 @@
 package Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,20 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zktr.dao.GuanLiYuan;
-import com.zktr.dao.YonHu;
-
-import java.util.List;
 
 /**
- * Servlet implementation class GuanLi
+ * Servlet implementation class shangjubu
  */
-@WebServlet("/Rear-End/jsp/GuanLi")
-public class GuanLi extends HttpServlet {
+@WebServlet("/Rear-End/jsp/shangjubu")
+public class shangjubu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		com.zktr.dao.GuanLiDAO guan = new com.zktr.dao.GuanLiDAO();
-		Object ad_id = (int)guan.bian()+1;
-		request.getSession().setAttribute("id", "00"+ad_id);
+		com.zktr.dao.ShangDAO shang = new com.zktr.dao.ShangDAO();
 		String curpagestring = request.getParameter("curpage");
 		String pagesizestring = request.getParameter("pagesize");
 		int curpage=0;
@@ -33,12 +30,14 @@ public class GuanLi extends HttpServlet {
 	    	curpage= Integer.parseInt(curpagestring);
 			pagesize= Integer.parseInt(pagesizestring);
 	    }
-		java.util.Map<String,Object> map = guan.cha(curpage,pagesize);
-		java.util.List<GuanLiYuan> list = (List<GuanLiYuan>) map.get("list");
+		System.out.println(curpage+","+pagesize);
+		java.util.Map<String,Object> map = shang.jubushua(curpage,pagesize);
+		java.util.List<com.zktr.dao.Shangjubu> list = (List<com.zktr.dao.Shangjubu>) map.get("list");
 		request.getSession().setAttribute("total", map.get("total"));
-		request.getSession().setAttribute("list", list);
-		request.getRequestDispatcher("guanli.jsp").forward(request, response);
-		
+		request.getSession().setAttribute("lists", list);
+		 String targetServletUrl = "spcha"; // 替换成目标Servlet的URL
+	        // 执行转发
+			request.getRequestDispatcher(targetServletUrl).forward(request, response);
 	}
 
 }

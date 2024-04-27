@@ -1,15 +1,18 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <%@ taglib prefix="p" uri="http://www.trkj.com/tr03802/page"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<link href="../css/hd.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/hou.css" rel="stylesheet" type="text/css"/>
 		<script src="../js/jquery-2.1.1.min.js"></script>
 	</head>
 	<body>
+	<style>
+	</style>
 			<jsp:include page="bian.jsp"></jsp:include>
 		<div id="lan">
 			<div id="tian">
@@ -85,6 +88,9 @@
 			</div>
 			<div id = "den">
 				<div id="shan_d"><p>登录日志</p></div>
+				<!-- 分页隐藏作用域 -->
+			<input type="hidden" name="curpage" value="${param.curpage}">
+	    	<input type="hidden" name="pagesize" value="3">
 				<div id="sha_x">
 					<table id="biao1">
 					    <tr>
@@ -94,6 +100,7 @@
 					        <th>运营商</th>
 					        <th>登录时间</th>
 					    </tr>
+					    
 					    <c:forEach items="${rizhi}" var="u">
 					    <tr>
 					        <td>${u.username}</td>
@@ -103,8 +110,10 @@
 					        <td>${u.login_time}</td>
 					    </tr>
 					    </c:forEach>
+					   
 					  </table>
-					  <div id="fen"></div>
+					  
+					  </div><div id="fen">
 					  </div>
 			</div>
 			<div id="din">
@@ -120,9 +129,12 @@
 					            </tr>
 					            </c:forEach>
 					</table>
+					
 				</div>
+				
 			</div>
-		</div>
+			
+		</div> 
 	</body>
 	<script src="../js/ce.js">
 		 

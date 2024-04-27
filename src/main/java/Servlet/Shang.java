@@ -21,9 +21,12 @@ public class Shang extends HttpServlet {
 		String pagesizestring = request.getParameter("pagesize");
 		int curpage=0;
 		int pagesize=0;
-		if(curpagestring==null||pagesizestring==null) {
+		if(curpagestring == null && pagesizestring == null) {
 			curpage=1;
-	        pagesize=3;
+			pagesize=9;
+	    }else {
+	    	curpage= Integer.parseInt(curpagestring);
+			pagesize= Integer.parseInt(pagesizestring);
 	    }
 		java.util.Map<String,Object> map = shang.cha(curpage,pagesize);
 		java.util.List<Shang> list = (List<Shang>) map.get("list");

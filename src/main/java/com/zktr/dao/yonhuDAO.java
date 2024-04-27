@@ -5,12 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class yonhuDAO extends BaseDAO{
-	public List<YonHu> chaxun(){
-		String sql = "select uid,uname,account,head from hs_users_message ORDER BY uid";
-		return this.executeQuery(sql, new Mapper<YonHu>() {
+	public java.util.Map<String, Object> chaxun(int curpage,int pagesize){
+		String sql = "select uid,uname,account,head from hs_users_message ORDER BY uid limit ?,?";
+		String sq12 = "select COUNT(*) from hs_users_message ORDER BY uid ";
+		List<YonHu> list = this.executeQuery(sql, new Mapper<YonHu>() {
 			@Override
 			public List<YonHu> map(ResultSet rs) throws SQLException {
 				List<YonHu> list = new ArrayList<>();
@@ -25,7 +27,14 @@ public class yonhuDAO extends BaseDAO{
 				return list;
 			}
 			
-		});
+		},(curpage - 1) * pagesize, pagesize);
+		Object obj = this.singleObject(sq12);
+		Map<String, Object> map = new java.util.HashMap<String,Object>();
+		System.out.println(list);
+		System.out.println(obj);
+	    map.put("list", list);
+	    map.put("total", obj);
+	    return map;
 	}
 	public List<YonHu> jubu(String id){
 		String sql = "select uid,uname,account,head from hs_users_message where uid = "+id;

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="p" uri="http://www.trkj.com/tr03802/page"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,42 @@
 <title>Insert title here</title>
 </head>
 <link href="../css/yonhu.css" rel="stylesheet" type="text/css" />
+<style>
+.oy_p{
+		font-size: 14px;
+	}
+	a{
+		text-decoration: none;
+		margin: 5px 5px;
+		padding: 2px 6px;
+		border: 1px solid gray;
+		font-size: 12px;
+		border-radius:4px;
+		cursor:pointer;
+	}
+	a:hover{
+		padding: 3px 7px;
+		
+	}
+	select{
+		width:40px;
+		margin: 5px 5px;
+		padding: 2px 6px;
+		border-radius:4px;
+	}
+	table {
+	  border-collapse: collapse;
+	  width: 30%;
+	}
+	td {
+	  text-align: center;
+	  padding: 5px;
+	  border: none;
+	}
+	#yuan{
+	height: 411px;
+	}
+</style>
 <body>
 	<jsp:include page="bian.jsp"></jsp:include>
 	<div id="lan">
@@ -51,6 +88,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- 分页隐藏作用域 -->
+			<input type="hidden" name="curpage" value="${param.curpage}">
+	    	<input type="hidden" name="pagesize" value="10">
 		<div id="shu">
 			<div id="an">
 				<button onclick="showPopup(); namea()">重置ID</button>
@@ -137,7 +177,9 @@
         </c:forEach>
     </tbody>
 </table>
+
 			</div>
+			<p:page controller="ChaYonHu" pagesize="10" total="${total}" curpage="${param.curpage}"/>
 		</div>
 		<div id=xian>
 		<h1 id = "yu">预览信息</h1>
